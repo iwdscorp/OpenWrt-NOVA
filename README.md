@@ -44,7 +44,9 @@ apk add --no-network --allow-untrusted /tmp/luci-theme-nova-2.8.1-r1.apk
 /etc/init.d/uhttpd restart
 ```
 
-**Project repository:** [iwdscorp/OpenWrt-NOVA](https://github.com/iwdscorp/OpenWrt-NOVA). The 2.8.1 package is built and locally installed; the GitHub Release is prepared but not published yet. Download links will be added after the uploaded release assets are verified.
+**Download 2.8.1:** [OpenWrt APK](https://github.com/iwdscorp/OpenWrt-NOVA/releases/download/v2.8.1/luci-theme-nova-2.8.1-r1.apk) · [Source archive](https://github.com/iwdscorp/OpenWrt-NOVA/releases/download/v2.8.1/OpenWrt-NOVA-v2.8.1-source.zip) · [SHA-256 checksums](https://github.com/iwdscorp/OpenWrt-NOVA/releases/download/v2.8.1/OpenWrt-NOVA-v2.8.1-SHA256SUMS.txt) · [Release notes](https://github.com/iwdscorp/OpenWrt-NOVA/releases/tag/v2.8.1).
+
+Published as a **pre-release** while fresh rendered/browser/mobile and native save/apply acceptance checks remain unverified. Uploaded asset sizes and GitHub SHA-256 digests match the locally verified artifacts. The source archive is the exact tagged source snapshot; subsequent documentation updates are available on `main`.
 
 See [installation and recovery](docs/INSTALL.md) before deployment.
 

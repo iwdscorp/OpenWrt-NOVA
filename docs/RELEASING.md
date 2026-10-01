@@ -1,6 +1,6 @@
 # Build and publish
 
-Approved destination: the public [iwdscorp/OpenWrt-NOVA](https://github.com/iwdscorp/OpenWrt-NOVA) repository. The repository exists and browser publishing access has been verified; source and Release publication are still pending. The GitHub connector uses a different account and does not have push permission here. Do not commit credentials or paste access tokens into an issue or chat.
+Published destination: the public [iwdscorp/OpenWrt-NOVA](https://github.com/iwdscorp/OpenWrt-NOVA) repository. Source and the [v2.8.1 pre-release](https://github.com/iwdscorp/OpenWrt-NOVA/releases/tag/v2.8.1) are published. The GitHub connector uses a different account; publishing used the maintainer's authenticated Git credentials. Do not commit credentials or paste access tokens into an issue or chat.
 
 ## Repository setup
 
@@ -53,14 +53,14 @@ The current 2.8.1 artifact was built and locally verified after a scoped firewal
 ## Publish checklist
 
 - [x] Confirm repository owner/name and public visibility with the maintainer.
-- [ ] Confirm authenticated publishing access; review repository-only source selection and privacy.
+- [x] Confirm authenticated publishing access; review repository-only source selection and privacy.
 - [ ] Push reviewed source and confirm the remote build/test result.
-- [ ] Replace pending-publication wording and add exact, tested release download links.
-- [ ] Tag the reviewed release commit as `v2.8.1` and create a Release using the prepared notes.
-- [ ] Attach the exact verified APK, a source archive, checksums and concise verification evidence.
-- [ ] Keep the original artifact checksum distinct from any rebuilt artifact/source archive checksum.
-- [ ] Mark the release as pre-release while important browser/runtime acceptance checks remain pending.
-- [ ] Verify uploaded asset names, sizes and checksums after publication.
+- [x] Replace pending-publication wording and add exact, tested release download links.
+- [x] Tag the reviewed release commit as `v2.8.1` and create a Release using the prepared notes.
+- [x] Attach the exact verified APK, a source archive and checksums; include verification evidence in the source.
+- [x] Keep the original artifact checksum distinct from any rebuilt artifact/source archive checksum.
+- [x] Mark the release as pre-release while important browser/runtime acceptance checks remain pending.
+- [x] Verify uploaded asset names, sizes and SHA-256 digests after publication.
 
 The initial distribution contains mixed-license components. Preserve source, PO attribution and font/license notices in the release; consult applicable license terms rather than marketing it as an MIT-only bundle.
 

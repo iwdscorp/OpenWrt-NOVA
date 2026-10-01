@@ -44,7 +44,11 @@ apk add --no-network --allow-untrusted /tmp/luci-theme-nova-2.8.1-r1.apk
 
 <div dir="rtl">
 
-مخزن عمومی پروژه: [iwdscorp/OpenWrt-NOVA](https://github.com/iwdscorp/OpenWrt-NOVA). بستهٔ ۲.۸.۱ ساخته و روی دموی محلی نصب شده است؛ **Release در GitHub هنوز منتشر نشده است** و لینک دانلود پس از انتشار و بررسی فایل‌ها اضافه می‌شود.
+مخزن عمومی پروژه: [iwdscorp/OpenWrt-NOVA](https://github.com/iwdscorp/OpenWrt-NOVA).
+
+دانلود نسخهٔ ۲.۸.۱: [بستهٔ OpenWrt APK](https://github.com/iwdscorp/OpenWrt-NOVA/releases/download/v2.8.1/luci-theme-nova-2.8.1-r1.apk) · [آرشیو سورس](https://github.com/iwdscorp/OpenWrt-NOVA/releases/download/v2.8.1/OpenWrt-NOVA-v2.8.1-source.zip) · [checksum](https://github.com/iwdscorp/OpenWrt-NOVA/releases/download/v2.8.1/OpenWrt-NOVA-v2.8.1-SHA256SUMS.txt) · [یادداشت انتشار](https://github.com/iwdscorp/OpenWrt-NOVA/releases/tag/v2.8.1).
+
+این نسخه **پیش‌انتشار** است؛ بررسی تصویری تازهٔ مرورگر/موبایل و گردش کامل ذخیره و اعمال تنظیمات هنوز تأیید نشده‌اند. اندازه و SHA-256 فایل‌های GitHub با فایل‌های محلی بررسی‌شده مطابقت دارند. آرشیو سورس مربوط به commit تگ‌شده است؛ به‌روزرسانی‌های بعدی راهنماها در شاخهٔ `main` قرار دارند.
 
 ## فایروال چه تفاوتی دارد؟
 

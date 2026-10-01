@@ -7,7 +7,7 @@
 - Tested target: OpenWrt 25.12.5 x86_64, native ucode LuCI openwrt-25.12.
 - Check your firmware version and package manager. This release is APK, not IPK or Android APK.
 - Back up configuration through **System → Backup / Flash Firmware**. Keep your existing theme and a known management-access method.
-- Download the package/checksum only from the selected repository's published Release. The GitHub publication is currently pending.
+- Download the package/checksum from the published [v2.8.1 pre-release](https://github.com/iwdscorp/OpenWrt-NOVA/releases/tag/v2.8.1). This is not a claim of completed browser/mobile or physical-device acceptance testing.
 - Check SHA-256 locally; a checksum detects corruption but is not a package signature.
 
 On Windows:

@@ -30,9 +30,11 @@ assert.doesNotMatch(ci,/pull_request_target|workflow_run|contents: write|secrets
 assert.equal([...ci.matchAll(/uses:\s+actions\/[\w-]+@([a-f0-9]{40})/g)].length,2,'Pin both official actions to full verified commits');
 for(const command of ['npm ci','npm run build','npm test'])assert.ok(ci.includes(command));
 assert.match(read('docs/README.fa.md'),/<div dir="rtl">/);
-assert.match(read('README.md'),/prepared but not published yet/,'Do not invent a published repository/release');
+assert.match(read('README.md'),/https:\/\/github\.com\/iwdscorp\/OpenWrt-NOVA\/releases\/download\/v2\.8\.1\/luci-theme-nova-2\.8\.1-r1\.apk/,'Preserve the verified package download destination');
+assert.match(read('README.md'),/pre-release/,'Do not present incomplete runtime acceptance as a stable release');
+assert.doesNotMatch(read('README.md')+read('docs/README.fa.md')+read('docs/RELEASING.md'),/ayriatoorani-arch|prepared but not published yet/,'Do not retain the old account or stale publication status');
 assert.match(read('docs/VERIFICATION.md'),/live modal\/save\/apply\/reorder workflow not executed/);
 const banner=read('docs/assets/nova-banner.svg');assert.match(banner,/<title[^>]*>/);assert.match(banner,/not a screenshot/);assert.doesNotMatch(banner,/<script|<foreignObject|\bon\w+\s*=|(?:href|src)\s*=\s*["']https?:/);
 const en=JSON.parse(read('docs/verification/NOVA-2.8-EN-NATIVE-VERIFICATION.json')),fa=JSON.parse(read('docs/verification/NOVA-2.8-FA-NATIVE-VERIFICATION.json'));
 assert.equal(en.length,2);assert.equal(fa.length,2);for(const row of en){assert.equal(row.count,3548);assert.deepEqual(row.different,[]);}for(const row of fa){assert.equal(row.count,3542);assert.deepEqual(row.missing,[]);assert.deepEqual(row.different,[]);}
-console.log('PASS: '+markdown.length+' repository Markdown files, '+count+' local links/assets, bilingual entry points, privacy/pending-publication wording, pinned read-only CI and native evidence reports (not GitHub rendering/remote execution).');
+console.log('PASS: '+markdown.length+' repository Markdown files, '+count+' local links/assets, bilingual entry points, privacy/verified-release links, pinned read-only CI and native evidence reports (not GitHub rendering/remote execution).');
