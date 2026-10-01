@@ -109,3 +109,9 @@ For the APK build prerequisites and publication checklist, see [Releasing](docs/
 NOVA-specific theme code: [MIT](LICENSE). LuCI-derived templates/translations: [Apache-2.0](LICENSE-LuCI). The included PassWall 2 translation component and merged catalog carry [GPL-3.0](LICENSE-PassWall). Fonts retain their own [Estedad](LICENSE-Estedad.txt) and [Vazirmatn](LICENSE-Vazirmatn.txt) OFL notices.
 
 This is a **mixed-license distribution**, not an MIT-only bundle. See [translation provenance](TRANSLATION-NOTICE.txt). NOVA is an independent project and is not affiliated with OpenWrt, Fortinet or PassWall.
+
+## Copyright and project credit
+
+NOVA is presented by **Turanio — [turanio.ir](https://turanio.ir)**. Please respect the creators' rights: retain copyright notices, license texts and contributor attribution when copying, modifying or redistributing the project. Please also retain the Turanio name and project credit when presenting or sharing NOVA.
+
+Third-party components remain subject to their respective licenses and copyright holders. This notice does not change the existing licenses or impose additional restrictions on the rights they grant.

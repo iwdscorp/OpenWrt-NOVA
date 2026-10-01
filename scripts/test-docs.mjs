@@ -36,6 +36,9 @@ assert.match(persianReadme,/پیش‌انتشار/,'Preserve the Persian release
 assert.match(persianReadme,/هنوز آزموده نشده‌اند/,'Preserve the unverified compatibility boundary');
 assert.doesNotMatch(persianReadme,/پس از انتشار در GitHub|گردش زنده|گردش کامل|DOM کدمحور/,'Use current publication status and natural Persian wording');
 assert.match(read('README.md'),/معرفی و راهنمای فارسی/,'Make the Persian introduction discoverable on the main page');
+for(const name of ['README.md','docs/README.fa.md'])assert.match(read(name),/https:\/\/turanio\.ir/,'Preserve Turanio project credit in both languages');
+assert.match(read('README.md'),/does not change the existing licenses/,'Attribution notice must not silently relicense third-party or existing code');
+assert.match(persianReadme,/مجوزهای موجود را تغییر نمی‌دهد/,'Preserve the Persian license boundary');
 assert.match(read('README.md'),/https:\/\/github\.com\/iwdscorp\/OpenWrt-NOVA\/releases\/download\/v2\.8\.1\/luci-theme-nova-2\.8\.1-r1\.apk/,'Preserve the verified package download destination');
 assert.match(read('README.md'),/pre-release/,'Do not present incomplete runtime acceptance as a stable release');
 assert.doesNotMatch(read('README.md')+read('docs/README.fa.md')+read('docs/RELEASING.md'),/ayriatoorani-arch|prepared but not published yet/,'Do not retain the old account or stale publication status');
