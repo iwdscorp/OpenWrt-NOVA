@@ -16,6 +16,12 @@ A bilingual **native LuCI theme** with Persian typography, English LTR layout, r
 
 </div>
 
+## Interface preview
+
+![NOVA 2.2 Persian overview captured from the local OpenWrt QEMU demo](docs/assets/nova-overview-v2.2.jpg)
+
+**Historical screenshot — NOVA 2.2.** This is an actual local OpenWrt QEMU demo capture, not a generated mockup. The current package is 2.8.1; telemetry and firewall views have changed since this capture. It illustrates the earlier visual design, not the exact current UI or fresh 2.8.1 browser verification.
+
 ## At a glance
 
 | Area | What NOVA adds |
@@ -86,7 +92,7 @@ Confirmed locally: build/tests, native APK upgrade, three ucode template compile
 
 Five firewall views are covered in both languages by **code-only DOM tests**, using a read-only nine-rule VM fixture plus isolated synthetic cases. Native nodes, handlers and cell order are preserved.
 
-**Not yet verified:** fresh rendered browser/mobile QA, live native modal/save/apply/reorder workflows, physical wireless devices and live VPN/subscription operation. Test fixtures are not screenshots or end-to-end proof. Current UI screenshots are intentionally omitted until captured and reviewed.
+**Not yet verified:** fresh rendered browser/mobile QA, live native modal/save/apply/reorder workflows, physical wireless devices and live VPN/subscription operation. Test fixtures are not screenshots or end-to-end proof. The historical 2.2 preview above does not verify the current 2.8.1 interface.
 
 See the [capability matrix and evidence](docs/VERIFICATION.md).
 

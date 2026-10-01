@@ -39,6 +39,10 @@ assert.match(read('README.md'),/معرفی و راهنمای فارسی/,'Make t
 for(const name of ['README.md','docs/README.fa.md'])assert.match(read(name),/https:\/\/turanio\.ir/,'Preserve Turanio project credit in both languages');
 assert.match(read('README.md'),/does not change the existing licenses/,'Attribution notice must not silently relicense third-party or existing code');
 assert.match(persianReadme,/مجوزهای موجود را تغییر نمی‌دهد/,'Preserve the Persian license boundary');
+const overviewImage=fs.readFileSync(path.join(root,'docs/assets/nova-overview-v2.2.jpg'));
+assert.deepEqual([...overviewImage.subarray(0,3)],[255,216,255],'The overview asset must be a JPEG capture');
+assert.match(read('README.md'),/Historical screenshot — NOVA 2\.2/,'Label historical UI evidence with the captured version');
+assert.match(persianReadme,/تصویر واقعی از نسخهٔ ۲\.۲/,'Keep the captured version visible to Persian readers');
 assert.match(read('README.md'),/https:\/\/github\.com\/iwdscorp\/OpenWrt-NOVA\/releases\/download\/v2\.8\.1\/luci-theme-nova-2\.8\.1-r1\.apk/,'Preserve the verified package download destination');
 assert.match(read('README.md'),/pre-release/,'Do not present incomplete runtime acceptance as a stable release');
 assert.doesNotMatch(read('README.md')+read('docs/README.fa.md')+read('docs/RELEASING.md'),/ayriatoorani-arch|prepared but not published yet/,'Do not retain the old account or stale publication status');

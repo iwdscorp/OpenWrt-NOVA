@@ -28,6 +28,8 @@ Network, firewall and PassWall2 configuration hashes were unchanged by installat
 
 ## Evidence
 
+- [Historical 2.2 overview screenshot](assets/nova-overview-v2.2.jpg): existing local QEMU capture, reviewed before publication. Not a fresh capture or visual acceptance check of 2.8.1; telemetry/firewall implementation has since changed. Its visible addresses and device details belong to the local QEMU lab, not a production router.
+
 - [2.8.1 header patch verification](verification/NOVA-2.8.1-VERIFICATION.txt)
 
 - [Detailed local verification report](verification/NOVA-2.8-VERIFICATION.txt)
