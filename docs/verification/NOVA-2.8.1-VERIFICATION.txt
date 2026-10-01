@@ -1,0 +1,37 @@
+NOVA 2.8.1-r1: scoped firewall header presentation patch
+Target: local OpenWrt 25.12.5 x86_64 / LuCI openwrt-25.12.
+APK SHA256: a952a26bbd191dcb059e0aa300fd12f55172a745461dfc8de2edad2aa7a15626
+
+Changed: unified title/icon/context/nav panel, purple underline tabs, labelled
+Showing x/y counter, narrow-screen header layout. Existing tables, toolbar,
+advanced editor and native actions remain unchanged. Header SVG uses actual
+SVG namespace, no HTML injection; technical counts isolated LTR.
+
+PASS: npm run build; npm test; eight strict CSS parses. Header structure tested
+on all five firewall pages in fa/en with one title, five links, one active link,
+real SVG namespace/decorative aria label and direction-safe count.
+Existing native node/cell/handler identity, action delegation, staging, filters,
+XSS-safe copy, fallback/rerender and telemetry/language tests still pass.
+PASS: actual APK upgrade 2.8.0-r1 -> 2.8.1-r1 and uhttpd restart.
+PASS: native header/footer/login ucode compilation.
+PASS: native English 3548 checks and Persian 3542 forms; zero differences in
+isolated/installed modes. English fa -> en -> fa still passes.
+
+Installed runtime hashes equal source:
+nova-firewall-v281-r1.js: adc457832c80f1a9f55ee82e690719da374add4fd1a7c62d3b81b06449329b77
+firewall.css: 66d1c0def0a171fc868b47f3e25fc56d5f6b75340cc8f7127e7c7a8f4863c69f
+tailwind.css: c03d72d16d237967894014df0e7fadb42a9450b0933c05ade30e49ef36dfb57e
+header.ut: e6e9759808f3b3f33db9b603547b248e9ef05436b9a19259a48772c9113c746b
+footer.ut: fa42bdfa767c6e6089cd3d5399d3a0c63dc272901ce6099ebd0cc7dedaf03db2
+
+Configuration before/after unchanged:
+network: 09aea78bb66f97cf280f448d5cafd43124ac89fd1892490c3f5bf49a6e663a43
+firewall: f7609b4d275188b50d8797d77bae6eabe135ee061619b07cb3d31767809f859f
+passwall2: 5751ddc9bab7a7b32234ce8288166e3de57a9f205c3545af94b4ef5eb4cabdf1
+
+Not claimed: fresh browser/mobile visual or live native interactive QA. Prior
+blocked localhost access was not retried or bypassed. Code-only tests are not
+rendered-page evidence. No GitHub repository or Release was published in this
+patch turn; prior repository preparation remains pending browser sign-in.
+Existing repository-cache/WSL disk-fallback warnings retained; APK verify/install
+succeeded without global signature/repository changes.

@@ -1,0 +1,16 @@
+{
+ "installedSnapshot":"OpenWrt 25.12.5 / LuCI openwrt-25.12 / PassWall2 26.9.16-r1",
+ "cases":[
+  {"file":"menu-bootstrap.js","count":3,"resolution":"Menu title variables refer to audited installed menu JSON; alternate theme only."},
+  {"file":"menu-nova.js","count":2,"resolution":"Menu title variables refer to audited installed menu JSON and theme faLabels."},
+  {"file":"tools/views.js","count":2,"resolution":"Two known log prefixes are translated by nova-i18n.js; error payload/tag remains original diagnostic data."},
+  {"file":"view/network/dhcp.js","count":1,"resolution":"Interpolated addtag is already translated; wrapping the resulting Persian em text again is harmless. Fifteen constant interpolated help strings are included in additional-fa.json."},
+  {"file":"view/status/dmesg.js","count":1,"resolution":"Known log error prefix is translated by nova-i18n.js; native error payload preserved."},
+  {"file":"view/status/index.js","count":1,"resolution":"Conditional Show/Hide branches both have Persian catalog entries."},
+  {"file":"view/system/repokeys.js","count":1,"resolution":"An outer gettext call wraps two already-translated paragraphs and a dynamic filesystem path; resulting prose is Persian and path stays unchanged."}
+ ],
+ "excluded":"Sortable.min.js uses a locally scoped function named _ unrelated to gettext; it is not a translation gap.",
+ "uncataloguedUi":"Core, ID, Ping, TCPing, Continue », auto, dummy, unicast, (root), 0 Mbit/s: exact UI-text-node handling; no control replacement or value mutation.",
+ "technicalLiterals":"Protocol/authentication/compression identifiers, Wi-Fi band frequencies, source addresses, CSS snippets and data examples intentionally remain original.",
+ "visualVerification":"Not confirmed in 2.5: browser security policy rejected localhost URL; no workaround was used. Static source and native gettext checks are not visual proof."
+}

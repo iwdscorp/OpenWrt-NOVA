@@ -1,0 +1,16 @@
+/* Utilities only: LuCI's functional reset and tab semantics must remain intact. */
+@layer theme, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+@source "../ucode";
+@source "../htdocs/luci-static/resources/menu-nova-v260-r1.js";
+@source "../htdocs/luci-static/resources/nova-monitor-v270-r1.js";
+@source "../htdocs/luci-static/resources/nova-firewall-v280-r1.js";
+@source "../htdocs/luci-static/resources/nova-firewall-v281-r1.js";
+/* Repository prose must not generate unrelated router utility classes. */
+@source not "../docs";
+@source not "../README.md";
+@source not "../CHANGELOG.md";
+@source not "../CONTRIBUTING.md";
+@source not "../.github";
+@source not "../scripts/test-docs.mjs";

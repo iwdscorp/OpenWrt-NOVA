@@ -1,0 +1,16 @@
+/* NOVA 2.6: language typography is independent of manual layout direction.
+   Local system UI fonts for English; bundled Estedad remains the Persian face.
+   No CDN, icon-font replacement, native dropdown geometry or list hit-test edits. */
+html[lang|=en]{--nova-font:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+html[lang|=en] body.nova{--font-sans:var(--nova-font);font-family:var(--nova-font);line-height:1.65}
+html[lang|=en] body.nova :is(.cbi-value-title,.cbi-value-description,.cbi-map-descr,.cbi-section-descr,.modal,.modal>*,.alert-message){line-height:1.65}
+html[lang|=en] body.nova :is(h1,h2,h3,h4,h5,h6){line-height:1.4}
+html[lang|=en] body.nova .nova-page-heading h1{line-height:1.4;letter-spacing:-.025em}
+html[lang|=en] body.nova .nova-brand small{font-size:10px;letter-spacing:.08em}
+html[lang|=en][dir=ltr] body.nova :is(.cbi-value-title,.cbi-map-descr,.cbi-section-descr,.cbi-value-description){direction:ltr!important;text-align:left}
+/* Inset, workspace margin, tables and cards already use logical properties. */
+body.nova .nova-submenu a{margin-block:2px;margin-inline:8px 0}
+body.nova .nova-language-link{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:6px 9px;border:1px solid #e4e2f0;border-radius:8px;color:#695a87;white-space:nowrap;font-size:12px;text-decoration:none}
+body.nova .nova-language-link:hover{background:#f1edfa;border-color:#b6a4dd}
+body.nova .nova-language-link svg{width:16px;height:16px;flex:none}
+@media(max-width:800px){body.nova header.nova-topbar{gap:8px}.nova-language-link{padding-inline:7px!important}.nova-language-link span{display:none}}

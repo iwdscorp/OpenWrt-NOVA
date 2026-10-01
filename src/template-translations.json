@@ -1,0 +1,10 @@
+{
+ "ids":[599,600,609,610,611,612],
+ "replacements":{
+  "From ":"از ", "To ":"به ", "via interface ":"از طریق رابط ", "interface ":"رابط ", "port ":"درگاه ",
+  "Match IP addresses except ":"تطبیق نشانی‌های IP به‌جز ",
+  "Match ports except ":"تطبیق درگاه‌ها به‌جز ",
+  "Match MACs except ":"تطبیق نشانی‌های MAC به‌جز ",
+  " a.k.a. ":" با نام دیگر "
+ }
+}

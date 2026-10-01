@@ -1,0 +1,151 @@
+@font-face{font-family:Vazirmatn;src:url(vazirmatn-arabic.woff2) format("woff2");font-style:normal;font-weight:100 900;font-display:swap}
+:root{--nova-ink:#192c40;--nova-muted:#67798d;--nova-line:#dde5ee;--nova-teal:#087e80;--nova-sidebar:248px;--primary-color-high:#087e80;--primary-color-medium:#076d6f;--primary-color-low:#065e60;--on-primary-color:#fff}
+*{box-sizing:border-box}
+body.nova{margin:0;padding:0;overflow-x:clip;background:#f3f6fa;color:var(--nova-ink);font:14px/1.65 Vazirmatn,"Segoe UI",Arial,sans-serif}
+body.nova input,body.nova button,body.nova select,body.nova textarea{font-family:inherit;font-size:14px}
+body.nova a{color:var(--nova-teal)}
+body.nova h1,body.nova h2,body.nova h3,body.nova h4{color:var(--nova-ink);line-height:1.4;text-shadow:none}
+body.nova h2{font-size:19px;margin:0 0 18px}
+body.nova h3{font-size:16px}
+body.nova .nova-sidebar{position:fixed;inset-block:0;inset-inline-start:0;width:var(--nova-sidebar);background:#101e30;color:#b4c3d7;z-index:1001;display:flex;flex-direction:column;padding:27px 16px 16px;border-inline-end:1px solid #223249}
+.nova-brand{display:flex;align-items:center;gap:12px;padding:0 12px 24px;color:#fff!important;text-decoration:none!important}
+.nova-brand>span{font-family:"Segoe UI",sans-serif;font-weight:750;font-size:24px;letter-spacing:3px;line-height:1}
+.nova-brand small{display:block;font-size:9px;color:#8ca2bd;font-weight:500;letter-spacing:1.9px;margin-top:9px}
+.nova-device{padding:15px 14px;margin:0 4px 22px;border:1px solid #2a3b51;border-radius:10px;background:#17273b}
+.nova-device strong,.nova-device small{display:block}
+.nova-device strong{color:#edf4ff;font-size:14px}
+.nova-device small{color:#94a8bf;font-size:12px;direction:ltr;text-align:start}
+.nova-sidebar nav{flex:1;overflow-y:auto;scrollbar-width:thin}
+.nova-sidebar ul{list-style:none;margin:0;padding:0}
+.nova-sidebar li{margin:3px 0}
+.nova-nav-toggle,.nova-nav-link{display:flex!important;align-items:center;gap:11px;width:100%;text-align:start;border:0!important;border-radius:8px;background:transparent!important;box-shadow:none!important;color:#afc1d8!important;padding:10px 12px!important;line-height:1.5;font-weight:500;text-decoration:none!important;cursor:pointer}
+.nova-nav-toggle:hover,.nova-nav-link:hover{color:#fff!important;background:#213149!important}
+.nova-nav-icon{width:19px;height:19px;flex:none;opacity:.9}
+.nova-nav-chevron{margin-inline-start:auto;width:14px;height:14px;transition:transform .18s}
+.nova-nav-toggle[aria-expanded=true] .nova-nav-chevron{transform:rotate(180deg)}
+.nova-nav-group.active>.nova-nav-toggle{background:#173c49!important;color:#67e1d2!important}
+.nova-submenu{padding:3px 0!important;margin-inline-start:21px!important;border-inline-start:1px solid #30425a}
+.nova-submenu a{display:block;padding:7px 15px;color:#9fb3cb!important;font-size:13px;text-decoration:none!important;border-radius:6px;margin:2px 0 2px 8px}
+.nova-submenu a:hover{background:#22354b;color:white!important}
+.nova-submenu a[aria-current=page]{background:#223b50;color:#71e6d7!important;font-weight:600;box-shadow:inset 0 0 0 1px #315167}
+.nova-sidebar-bottom{border-top:1px solid #2c3b4f;margin-top:18px;padding:15px 12px 0;display:flex;justify-content:space-between;font-size:11px;color:#8097b4}
+.nova-workspace{margin-inline-start:var(--nova-sidebar);min-width:0}
+body.nova header.nova-topbar{position:sticky;top:0;inset-inline:auto;height:68px;background:#fff;box-shadow:none;border-bottom:1px solid var(--nova-line);padding:0 32px;display:flex;align-items:center;gap:18px;z-index:999;line-height:1.5}
+.nova-breadcrumb{display:flex;gap:13px;align-items:center;font-size:13px;color:var(--nova-muted)}
+body.nova header.nova-topbar{margin:0}
+.nova-breadcrumb strong{font-weight:600;color:var(--nova-ink)}
+.nova-topbar #indicators{position:static;float:none;margin:0;margin-inline-start:auto;display:flex;gap:8px}
+.nova-topbar #indicators>span{font-size:11px;border:0;border-radius:5px;padding:5px 9px;background:#e9f5f3;color:#176961}
+body.nova #nova-direction{background:#f4f7fa;border:1px solid var(--nova-line);border-radius:6px;color:var(--nova-muted);padding:5px 8px;font-size:11px;white-space:nowrap}
+body.nova #nova-menu-toggle{display:none;background:transparent;border:0;padding:6px;color:var(--nova-ink)}
+.nova-main{padding:28px 32px 38px;max-width:1600px;margin:auto;min-height:calc(100vh - 120px);width:100%}
+.nova-page-heading{display:flex;justify-content:space-between;align-items:center;margin:0 0 25px}
+.nova-page-heading h1{font-size:28px;font-weight:700;margin:4px 0 0;letter-spacing:-.5px}
+.nova-eyebrow{font:600 10px/1.5 "Segoe UI",sans-serif;letter-spacing:1.8px;color:#8394a8}
+.nova-page-version{font:11px "Segoe UI",sans-serif;letter-spacing:1px;color:#8293a8;border:1px solid var(--nova-line);border-radius:6px;padding:7px 9px}
+.nova-page-version b{color:#52697e;margin-inline-start:7px}
+.nova-main>h2:first-of-type{display:none}
+.nova-main #tabmenu{margin:0 0 22px}
+body.nova .tabs,body.nova .cbi-tabmenu{display:flex;flex-wrap:wrap;gap:4px;list-style:none;padding:4px;border:1px solid var(--nova-line);background:#eaf0f6;border-radius:9px;margin:0 0 20px;box-shadow:none}
+body.nova .tabs>li,body.nova .cbi-tabmenu>li{float:none;border:0;background:transparent;padding:0;margin:0;box-shadow:none}
+body.nova .tabs>li>a,body.nova .cbi-tabmenu>li>a{display:block;color:#63758a;padding:8px 14px;border:0;border-radius:6px;background:transparent;text-decoration:none;font-size:13px;line-height:1.5;margin:0}
+body.nova .tabs>li.active>a,body.nova .cbi-tabmenu>li.cbi-tab>a{background:white;color:#087b7e;box-shadow:0 1px 4px #20395014;font-weight:650}
+body.nova .tabs>li>a:hover,body.nova .cbi-tabmenu>li>a:hover{background:#fff9;color:#087b7e}
+body.nova .cbi-section{background:#fff;border:1px solid var(--nova-line);border-radius:11px;padding:19px 20px;margin:0 0 20px;box-shadow:0 2px 3px #21365003;min-width:0}
+body.nova .cbi-section>h3{margin:0 0 15px;padding-bottom:13px;border-bottom:1px solid #edf1f6}
+body.nova .cbi-section-node{margin:0;padding:0;border:0;background:transparent}
+body.nova .cbi-map-descr,body.nova .cbi-section-descr{color:var(--nova-muted);font-size:13px;margin-bottom:18px}
+body.nova .cbi-value{padding:11px 0;margin:0;border-bottom:1px solid #f0f3f7;min-height:44px}
+body.nova .cbi-value:last-child{border-bottom:0}
+body.nova .cbi-value>label.cbi-value-title,body.nova .cbi-value-title{flex:0 0 26%;width:26%;text-align:start;font-size:13px;color:#52687e;padding:7px 0;padding-inline-end:20px;float:none;overflow-wrap:anywhere}
+body.nova .cbi-value-field{flex:1;min-width:0;margin:0!important;padding:0}
+body.nova .cbi-value-description{color:#7b8b9c;font-size:12px;line-height:1.7;margin-top:6px}
+body.nova input:not([type=checkbox]):not([type=radio]):not([type=button]):not([type=submit]),body.nova select,body.nova textarea,body.nova .cbi-dropdown{border:1px solid #cdd8e4;border-radius:6px;background:#fff;color:#243b50;box-shadow:none;padding:7px 10px;min-height:36px;max-width:100%}
+body.nova .cbi-value-field>input[type=text],body.nova .cbi-value-field>input[type=password],body.nova .cbi-value-field>select{width:min(100%,440px)}
+body.nova .cbi-value-field .cbi-input-text,body.nova .cbi-value-field .cbi-input-select,body.nova .cbi-value-field>.cbi-dropdown{width:min(100%,380px)}
+body.nova .cbi-value>label.cbi-value-title{flex:0 0 240px;width:240px}
+body.nova .cbi-value-description{max-width:680px}
+body.nova textarea{line-height:1.8}
+body.nova input:focus,body.nova select:focus,body.nova textarea:focus,body.nova .cbi-dropdown:focus{outline:2px solid #18a89b55;outline-offset:1px;border-color:#219f9a}
+body.nova button:focus-visible,body.nova a:focus-visible{outline:2px solid #19b7a6;outline-offset:3px}
+body.nova input[type=checkbox],body.nova input[type=radio]{accent-color:#087e80}
+.nova-main .table,.nova-main table{width:100%;margin:0 0 10px;background:transparent;border:0;border-collapse:separate;border-spacing:0}
+.nova-main .table .tr,.nova-main table tr{background:transparent}
+.nova-main .table .th,.nova-main table th{background:#f5f8fb;color:#708397;font-weight:600;font-size:12px;padding:11px 12px;border-bottom:1px solid var(--nova-line);text-align:start}
+.nova-main .table .td,.nova-main table td{padding:10px 12px;font-size:13px;border-bottom:1px solid #edf1f6;vertical-align:middle;text-align:start}
+.nova-main .table .tr:last-child .td,.nova-main table tr:last-child td{border-bottom:0}
+.nova-main .table .tr:hover .td,.nova-main table tr:hover td{background:#f8fbfd}
+body.nova .btn,body.nova .cbi-button{background:#fff;background-image:none;color:#536b83;border:1px solid #cdd9e5;border-radius:6px;box-shadow:none;text-shadow:none;font-weight:600;padding:7px 12px;min-height:32px;font-size:12px;line-height:1.5;height:auto}
+body.nova .cbi-button:hover{background:#f0f6fa;border-color:#8fadb9}
+body.nova .cbi-button-apply,body.nova .cbi-button-save,body.nova .cbi-button-positive,body.nova .cbi-button-add{background:#087e80;color:#fff;border-color:#087e80}
+body.nova .cbi-button-remove,body.nova .cbi-button-negative{background:#fff3f3;border-color:#f0cdd1;color:#b74752}
+body.nova .cbi-page-actions .cbi-button-save{background:#e7f5f3;color:#076e70;border-color:#99cfca}
+body.nova .cbi-page-actions{position:sticky;bottom:0;z-index:900;background:#fff;border:1px solid var(--nova-line);border-radius:9px;box-shadow:0 -5px 20px #182e4607;padding:12px 16px;display:flex;justify-content:flex-end;flex-wrap:wrap;gap:8px;margin:20px 0 0}
+body.nova .modal{background:#fff;border:1px solid var(--nova-line);border-radius:12px;box-shadow:0 20px 80px #101e3040;max-height:90vh;overflow-y:auto;padding:24px;color:var(--nova-ink)}
+body.nova .modal .cbi-section{box-shadow:none}
+body.nova #modal_overlay{z-index:1100}
+body.nova .modal{width:min(900px,calc(100vw - 28px));max-width:900px}
+body.nova .modal .cbi-value-field>div{max-width:100%}
+body.nova .modal .cbi-tabmenu{position:sticky;top:-24px;z-index:2}
+body.nova .alert-message{border-radius:8px;box-shadow:none;padding:13px 16px;background:#eaf5fb;color:#305875;border:1px solid #c8dfed}
+body.nova .alert-message.warning{background:#fff8e7;border-color:#ecddb3;color:#856125}
+body.nova .alert-message.error{background:#fff0f1;border-color:#f1ccd1;color:#a73847}
+body.nova .alert-message.success{background:#e8f7f1;border-color:#bfe2d5;color:#256a54}
+.nova-main .ifacebox{background:#fff;border:1px solid #dbe5ee;border-radius:8px;box-shadow:none;margin:4px;min-width:145px}
+.nova-main .ifacebox-head{background:#eff7f7;color:#23666b;border-bottom:1px solid #dcebea;border-radius:7px 7px 0 0;padding:7px 10px}
+.nova-main .ifacebox-body{padding:9px 12px;font-size:12px;line-height:1.7}
+body.nova img[src$="/bridge.svg"]{content:url(bridge.svg);width:22px;height:22px}
+body.nova img[src$="/ethernet.svg"]{content:url(ethernet.svg);width:22px;height:22px}
+.nova-main .network-status-table{border:0;background:transparent}
+body.nova .cbi-progressbar{background:#eaf0f5;border:0;border-radius:5px;height:8px;overflow:visible;direction:ltr;margin-top:22px}
+body.nova .cbi-progressbar>div{background:#33adad}
+body.nova .cbi-progressbar::before{font-size:11px;color:#52687e;line-height:18px;top:-21px;width:100%}
+body.nova .cbi-tooltip{left:auto;right:auto;visibility:hidden;max-width:calc(100vw - 40px);white-space:normal}
+body.nova .cbi-tooltip-container:hover .cbi-tooltip:not(:empty){visibility:visible}
+.nova-main .zonebadge{border-radius:5px;padding:3px 6px}
+.nova-main code,.nova-main pre{direction:ltr;text-align:left;unicode-bidi:plaintext}
+.nova-main textarea{unicode-bidi:plaintext}
+.nova-main pre,.nova-main textarea#syslog{background:#142237;color:#d5e6f4;border:1px solid #283d57;border-radius:9px;padding:16px;font:13px/1.8 Consolas,monospace}
+body[data-page=admin-status-overview] #view{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}
+body[data-page=admin-status-overview] #view>.cbi-section{margin:0}
+body[data-page=admin-status-overview] #view>.cbi-section:first-child{grid-column:1/-1}
+body[data-page=admin-status-overview] #view>.cbi-section:first-child .table{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 26px}
+body[data-page=admin-status-overview] #view>.cbi-section:first-child .tr{display:flex;align-items:center;border-bottom:1px solid #edf1f6}
+body[data-page=admin-status-overview] #view>.cbi-section:first-child .td{display:block;border:0;min-width:0;flex:1;overflow-wrap:anywhere}
+body[data-page=admin-status-overview] #view .td:not(:first-child){unicode-bidi:plaintext}
+.nova-status-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:22px}
+.nova-summary-item{background:#fff;border:1px solid var(--nova-line);border-radius:10px;padding:16px 18px;border-top:3px solid #279b98}
+.nova-summary-label{color:#75879a;font-size:12px;display:block;margin-bottom:8px}
+.nova-summary-item strong{font:600 21px/1.4 "Segoe UI",Vazirmatn,sans-serif;display:block;color:#20384d;direction:ltr;text-align:start}
+.nova-summary-item small{font-size:11px;color:#7b8ea2}
+.nova-footer{display:flex;justify-content:space-between;gap:20px;padding:15px 32px;border-top:1px solid var(--nova-line);color:#8696a8;font-size:11px}
+.nova-skip{position:fixed;top:-80px;z-index:2000;background:white;padding:10px}.nova-skip:focus{top:5px}
+.nova-login{min-height:100vh;display:grid;place-items:center;background:#101e30!important;padding:24px!important}
+.nova-login-card{max-width:430px;width:100%;padding:35px;background:#fff;border-radius:15px;box-shadow:0 25px 80px #0003}
+.nova-login-card h1{font-size:24px;margin:8px 0 24px}.nova-login-card label{display:block;margin:15px 0 6px;font-size:13px}.nova-login-card input{width:100%}.nova-login-card button{width:100%;margin-top:25px;padding:11px!important}
+.nova-scrim{position:fixed;inset:0;z-index:1000;border:0;background:#09142488}
+/* Native hidden controls and LuCI tab panes retain their original semantics. */
+[hidden]{display:none!important}
+@media(min-width:1600px){.nova-main{padding-inline:44px}}
+@media(min-width:1100px){
+ #cbi-network-interface .cbi-section-tbody{display:block}
+ #cbi-network-interface .cbi-section-table-row{display:grid;grid-template-columns:180px minmax(0,1fr) auto;align-items:center;gap:24px;padding:14px 0;border-bottom:1px solid var(--nova-line)}
+ #cbi-network-interface .cbi-section-table-row>.td{display:block;width:auto!important;border:0}
+ #cbi-network-interface [id$="-ifc-description"]{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 22px;text-align:start}
+ #cbi-network-interface [id$="-ifc-description"]>br{display:none}
+ #cbi-network-interface [id$="-ifc-description"]>.nowrap{white-space:normal;unicode-bidi:plaintext}
+}
+@media(max-width:1100px){:root{--nova-sidebar:220px}.nova-main{padding:22px}.nova-status-summary{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:800px){.nova-workspace{margin-inline-start:0}.nova-sidebar{transform:translateX(-100%);transition:transform .2s;width:248px!important}html[dir=rtl] .nova-sidebar{transform:translateX(100%)}.nova-menu-open .nova-sidebar,html[dir=rtl] .nova-menu-open .nova-sidebar{transform:none}body.nova #nova-menu-toggle{display:block}.nova-topbar{padding:0 14px!important;gap:10px!important;height:58px!important}.nova-breadcrumb>span{display:none}.nova-main{padding:18px 14px}.nova-page-heading h1{font-size:24px}body.nova .cbi-section{padding:16px 12px}body.nova .tabs,body.nova .cbi-tabmenu{flex-wrap:nowrap;overflow-x:auto;white-space:nowrap}body.nova .cbi-value-title{float:none;width:100%;padding:4px 0}body.nova .cbi-value-field,html[dir=ltr] body.nova .cbi-value-field,html[dir=rtl] body.nova .cbi-value-field{margin:0;padding:0}body.nova .cbi-section-table{display:block;overflow-x:auto}body.nova .cbi-section-table-row{min-width:540px}body.nova .cbi-section-table .th,body.nova .cbi-section-table .td{min-width:85px}body[data-page=admin-status-overview] #view{grid-template-columns:1fr}.nova-status-summary{gap:10px}.nova-summary-item{padding:13px}.nova-summary-item strong{font-size:17px}.nova-footer{padding:14px;flex-wrap:wrap}.nova-page-version{display:none}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+@media(max-width:800px){
+ body.nova .tabs,body.nova .cbi-tabmenu{overflow-y:hidden}
+ body.nova #cbi-network-interface .cbi-section-table{display:block;overflow:visible}
+ body.nova #cbi-network-interface .cbi-section-tbody{display:block;width:100%}
+ body.nova #cbi-network-interface .cbi-section-table-row{display:flex;flex-direction:column;min-width:0;border:1px solid var(--nova-line);border-radius:9px;margin-bottom:12px}
+ body.nova #cbi-network-interface .cbi-section-table-row>.td{display:block;min-width:0;width:100%;padding:10px}
+ body.nova #cbi-network-interface .ifacebox{margin:0;width:100%}
+ body.nova #cbi-network-interface .cbi-section-actions>div{display:flex;flex-wrap:wrap;gap:5px;justify-content:center}
+}
+@media(max-width:800px){.nova-sidebar{visibility:hidden}html.nova-menu-open .nova-sidebar,html[dir=rtl].nova-menu-open .nova-sidebar{visibility:visible;transform:none}}
+@media(max-width:800px){body.nova .cbi-value{flex-direction:column}body.nova .cbi-value>label.cbi-value-title{width:100%;flex-basis:auto}body.nova .cbi-value-field{width:100%}body[data-page=admin-status-overview] #view>.cbi-section:first-child .table{grid-template-columns:1fr}}

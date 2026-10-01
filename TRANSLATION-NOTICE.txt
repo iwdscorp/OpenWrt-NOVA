@@ -1,0 +1,30 @@
+NOVA 2.5 Persian catalogs
+========================
+LuCI base, firewall and package-manager Persian PO files: Apache-2.0.
+Source: https://git.openwrt.org/project/luci.git
+Commit: 128a7812f4be233c5dd7f7466f534fd888785caf
+Original PO headers and contributor notices are preserved in src/upstream-fa.
+
+PassWall 2 Persian PO: GPL-3.0 (see LICENSE-PassWall).
+Source: https://github.com/Openwrt-Passwall/openwrt-passwall2
+Commit: 05211da5bdd6b569b266f667c4666fdd63e49325
+File: luci-app-passwall2/po/fa/passwall2.po
+One missing closing quote repaired locally. UTF-8 parsing is explicit because
+this source file has no gettext charset header. It is included in the source ZIP.
+Supplemental keys correct missing/invalid translations, not VPN configuration.
+
+src/installed-source.json: reproducible missing-key inventory from the installed
+OpenWrt 25.12.5 / LuCI 25.12 / PassWall2 26.9.16-r1 UI source snapshot.
+src/installed-translations.json: 1967 manually translated singular/plural IDs.
+src/template-translations.json: six audited firewall summaries, exact prose-only
+substitutions preserving all native conditional and iteration template syntax.
+src/additional-fa.json: reviewed dynamic/uncatalogued labels and upstream fixes.
+
+Merged nova.fa.lmo contains native gettext context and Persian plural metadata.
+No input values, keys, IPs, raw log payloads or shell commands are translated.
+GPL-3.0 applies to the included PassWall translation component and its merged
+catalog; separate theme code/font components retain their own stated licenses.
+
+Scope: installed LuCI modules, bundled protocol views, firewall, package-manager,
+PassWall2 client/server/node/subscription/rules/update/logging UI. This is not a
+claim of translation of every optional OpenWrt package or PassWall1 release.

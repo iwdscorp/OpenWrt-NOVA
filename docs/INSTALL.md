@@ -1,0 +1,80 @@
+# Install and recover
+
+[Overview](../README.md) · [فارسی](README.fa.md)
+
+## Before installing
+
+- Tested target: OpenWrt 25.12.5 x86_64, native ucode LuCI openwrt-25.12.
+- Check your firmware version and package manager. This release is APK, not IPK or Android APK.
+- Back up configuration through **System → Backup / Flash Firmware**. Keep your existing theme and a known management-access method.
+- Download the package/checksum only from the selected repository's published Release. The GitHub publication is currently pending.
+- Check SHA-256 locally; a checksum detects corruption but is not a package signature.
+
+On Windows:
+
+```powershell
+Get-FileHash -Algorithm SHA256 -LiteralPath .\luci-theme-nova-2.8.1-r1.apk
+```
+
+On Linux:
+
+```sh
+sha256sum luci-theme-nova-2.8.1-r1.apk
+```
+
+The existing locally verified 2.8.1 artifact has SHA-256:
+
+```text
+a952a26bbd191dcb059e0aa300fd12f55172a745461dfc8de2edad2aa7a15626
+```
+
+A rebuild can produce different bytes. Always compare with the checksum of the artifact you actually downloaded.
+
+## LuCI upload · no SFTP
+
+Open **System → Software → Upload Package**, choose the APK and install it. If the version exposes an option for an untrusted local package, allow only this upload. Do not change repositories or disable global signature verification.
+
+If your interface does not expose that option, use the SSH method after transferring the APK using an available supported upload method. SFTP is not a requirement of NOVA, and the theme does not enable an SFTP server.
+
+## Offline SSH installation
+
+With the file already in `/tmp`:
+
+```sh
+apk add --no-network --allow-untrusted /tmp/luci-theme-nova-2.8.1-r1.apk
+/etc/init.d/uhttpd restart
+```
+
+`--allow-untrusted` is scoped to this command. This package is not signed by OpenWrt's official repository keys. Do not install files from an untrusted distributor.
+
+## Select language and theme
+
+Open **System → System → Language and Style**. Select **NOVA**, choose **فارسی** or **English**, then **Save & Apply**. Reload with **Ctrl+F5**. Installation registers the theme/languages but does not force a selection.
+
+The theme uses existing LuCI authentication; it does not set or replace your router password. No laboratory login credentials are shipped in this repository.
+
+## Return to the previous theme
+
+Use **Language and Style** to select your previous theme. For an installed Bootstrap fallback through SSH:
+
+```sh
+uci set luci.main.mediaurlbase='/luci-static/bootstrap'
+uci commit luci
+/etc/init.d/uhttpd restart
+```
+
+To uninstall after switching away:
+
+```sh
+apk del luci-theme-nova
+```
+
+Only the theme is removed. Do not remove LuCI, firewall or network packages to troubleshoot styling.
+
+## If something looks wrong
+
+1. Confirm the displayed NOVA version is 2.8.1 and reload without cache.
+2. Confirm the selected LuCI language, not just the manual direction toggle.
+3. In Firewall, **Advanced editor / rule order** exposes the original controls.
+4. Report the firmware/LuCI/package version, language, screen width and page path. Redact hostnames, addresses, credentials and subscription URLs.
+5. Distinguish styling problems from underlying plugin/network failures; NOVA does not install VPN engines or fix missing PassWall binaries.

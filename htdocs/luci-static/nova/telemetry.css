@@ -1,0 +1,56 @@
+/* NOVA 2.7: actual telemetry + presentation-only motion. No native form rules. */
+@property --nova-memory{syntax:'<percentage>';inherits:false;initial-value:0%}
+body.nova .nova-insights{--nova-rx:#16b8a6;--nova-tx:#8b5cf6}
+.nova-memory-ring{transition:--nova-memory .6s ease}
+.nova-live-tile{overflow:hidden;transition:border-color .25s,box-shadow .25s,transform .25s}
+.nova-live-tile:hover{transform:translateY(-3px);border-color:#c8bbf0;box-shadow:0 10px 25px #49336a12}
+.nova-tile-spark{display:block;width:100%;height:32px;margin-top:5px;direction:ltr;color:#9581d2}
+.nova-tile-download .nova-tile-spark{color:var(--nova-rx)}
+.nova-tile-upload .nova-tile-spark{color:var(--nova-tx)}
+.nova-live-pill::before{animation:nova-live-pulse 2s ease-in-out infinite}
+.nova-live-pill.error::before{animation:none}
+@keyframes nova-live-pulse{50%{box-shadow:0 0 0 5px #44b88a00;opacity:.65}}
+body.nova .nova-chart-controls{flex-wrap:wrap;justify-content:flex-end}
+body.nova .nova-chart-motion{background:transparent;border:0;border-inline-start:1px solid #ded6ee;box-shadow:none;border-radius:0;padding:5px 9px;color:#77668e;font-size:11px;white-space:nowrap}
+body.nova .nova-chart-motion[aria-pressed=true]{color:#526f91}
+.nova-chart-toolbar{align-items:flex-start}
+.nova-chart-canvas svg{outline-offset:5px;border-radius:5px}
+.nova-chart-canvas svg:focus-visible{outline:2px solid #9a81dc}
+.nova-chart-tooltip{font-size:12px;z-index:2}
+.nova-traffic-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px;padding-top:14px;border-top:1px solid #eeebf5}
+.nova-traffic-summary>div{display:flex;flex-direction:column;gap:5px;min-width:0}
+.nova-traffic-summary span{font-size:11px;color:#9a90ac}
+.nova-traffic-summary bdi{font-size:13px;font-weight:500;color:#66517d;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.nova-chart-foot{padding-top:10px;margin-top:12px}
+body.nova .nova-health-panel{display:block}
+.nova-system-trend{border-top:1px solid #f0edf6;padding-top:9px;margin-top:9px}
+.nova-system-trend>div{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:11px;color:#9887a9}
+.nova-system-trend strong{font-size:14px;color:#625074;white-space:nowrap}
+.nova-system-trend svg{display:block;width:100%;height:40px;direction:ltr;margin-top:6px}
+body.nova .nova-health-panel>p{margin-bottom:10px;font-size:12px;line-height:1.6}
+.nova-health-panel .nova-topology{margin-top:10px;padding-block:9px}
+.nova-counter-disclosure{border-top:1px solid #f0edf6;margin-top:6px;padding-top:8px}
+.nova-counter-disclosure summary{cursor:pointer;color:#847397;font-size:12px;min-height:30px}
+.nova-counter-details small{display:block;font-size:11px;color:#a192ac;margin-bottom:7px}
+.nova-counter-details>div{display:flex;justify-content:space-between;gap:8px;font-size:12px;padding-block:3px;color:#8b7e9b}
+.nova-counter-details bdi{color:#66517d;font-variant-numeric:tabular-nums}
+.nova-comparison-panel{background:#fff;border:1px solid #e4e7f1;border-radius:18px;padding:20px;margin-top:18px}
+.nova-comparison-panel .nova-panel-heading{margin-bottom:8px}
+.nova-comparison-panel>p{color:#9a90ac;font-size:12px;line-height:1.7;margin-bottom:15px}
+.nova-interface-charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+body.nova .nova-comparison-item{display:block;text-align:start;min-width:0;min-height:130px;padding:14px;background:#fbfaff;border:1px solid #e8e2f2;border-radius:12px;box-shadow:none;transition:background .25s,border-color .25s}
+body.nova .nova-comparison-item:hover{background:#f7f3ff;border-color:#b9a7e3}
+body.nova .nova-comparison-item[aria-pressed=true]{border-color:#a690da;background:#f4efff}
+.nova-comparison-heading{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.nova-comparison-heading bdi{font-size:14px;font-weight:600;color:#65517d;overflow-wrap:anywhere}
+.nova-comparison-state{font-size:10px;color:#8e809e}
+.nova-comparison-item svg{display:block;width:100%;height:44px;direction:ltr;margin-block:10px}
+.nova-comparison-values{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;font-size:11px}
+.nova-comparison-values .rx{color:#119b8c}.nova-comparison-values .tx{color:#8661c9}
+.nova-data-stale .nova-tile-spark,.nova-data-stale .nova-system-trend svg,.nova-data-stale .nova-comparison-item svg,.nova-data-stale .nova-chart-canvas svg{opacity:.4}
+.nova-data-stale .nova-live-pill::before{animation:none}
+.nova-motion-off *{animation:none!important;transition:none!important}
+.nova-motion-off .nova-live-tile:hover{transform:none}
+@media(min-width:1001px){.nova-insights-grid{grid-template-columns:minmax(0,2.1fr) minmax(280px,1fr)}}
+@media(max-width:800px){.nova-traffic-summary{grid-template-columns:1fr;gap:10px;margin-top:14px}.nova-traffic-summary>div{flex-direction:row;justify-content:space-between;gap:12px}.nova-traffic-summary span{max-width:52%}.nova-traffic-summary bdi{font-size:12px}.nova-chart-controls{width:100%}.nova-chart-toolbar{flex-wrap:wrap}.nova-comparison-panel{padding:15px;border-radius:14px}.nova-interface-charts{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}.nova-tile-spark{height:25px}.nova-traffic-summary bdi{text-align:end}}
+@media(prefers-reduced-motion:reduce){.nova-insights *{animation:none!important;transition:none!important}.nova-live-tile:hover{transform:none}}

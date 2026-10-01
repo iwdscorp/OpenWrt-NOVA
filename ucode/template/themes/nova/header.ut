@@ -1,0 +1,61 @@
+{# NOVA 2; LuCI Ucode theme. MIT; integration based on LuCI Apache-2.0 templates. #}
+{%
+ import { getuid, getspnam } from 'luci.core';
+ const board = ubus.call('system', 'board') ?? {};
+ const rtl = dispatcher.lang == 'fa' || dispatcher.lang == 'ar';
+ http.prepare_content('text/html; charset=UTF-8');
+-%}
+<!DOCTYPE html>
+<html lang="{{ dispatcher.lang }}" dir="{{ rtl ? 'rtl' : 'ltr' }}" data-darkmode="false">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="theme-color" content="#101e30">
+ <title>{{ striptags(board.hostname ?? 'OpenWrt') }} · NOVA</title>
+ <link rel="icon" href="{{ media }}/logo.svg" type="image/svg+xml">
+ <link rel="stylesheet" href="{{ media }}/base.css?v=2.0.0">
+ <link rel="stylesheet" href="{{ media }}/tailwind.css?v=2.8.1-r1">
+ <link rel="stylesheet" href="{{ media }}/cascade.css?v=2.1.0">
+ {% if (node?.css): %}<link rel="stylesheet" href="{{ resource }}/{{ node.css }}">{% endif %}
+ {% if (css): %}<style>{{ css }}</style>{% endif %}
+ <link rel="stylesheet" href="{{ media }}/components.css?v=2.1.0-build3">
+ {% if (rtl): %}<link rel="preload" href="{{ media }}/estedad-regular.woff2" as="font" type="font/woff2" crossorigin>{% endif %}
+ <link rel="stylesheet" href="{{ media }}/visual.css?v=2.6.0-r1">
+ <link rel="stylesheet" href="{{ media }}/controls.css?v=2.3.0-r1">
+ <link rel="stylesheet" href="{{ media }}/persian.css?v=2.4.0-r1">
+ <link rel="stylesheet" href="{{ media }}/languages.css?v=2.6.0-r1">
+ <link rel="stylesheet" href="{{ media }}/telemetry.css?v=2.7.0-r1">
+ <link rel="stylesheet" href="{{ media }}/firewall.css?v=2.8.1-r1">
+ <script src="{{ dispatcher.build_url('admin/translations', dispatcher.lang) }}"></script>
+ <script src="{{ resource }}/cbi.js"></script>
+ <script src="{{ media }}/nova-i18n.js?v=2.5.0-r1"></script>
+</head>
+<body class="nova {{ blank_page ? 'nova-login' : '' }} lang_{{ dispatcher.lang }}" data-page="{{ entityencode(join('-', ctx.path ?? ctx.request_path), true) }}">
+{% if (!blank_page): %}
+ <a class="nova-skip" href="#maincontent">{{ _('Skip to content') }}</a>
+ <aside class="nova-sidebar" id="nova-sidebar">
+  <a class="nova-brand" href="{{ dispatcher.build_url('admin/status/overview') }}"><img src="{{ media }}/logo.svg" alt="" width="34" height="34"><span>NOVA<small>{{ _('Network console') }}</small></span></a>
+  <div class="nova-device"><strong>{{ striptags(board.hostname ?? 'OpenWrt') }}</strong><small>OpenWrt {{ version.distversion }}</small></div>
+  <nav aria-label="{{ _('Main menu') }}"><ul id="topmenu"></ul></nav>
+  <div class="nova-sidebar-bottom"><span>LuCI / NOVA 2</span><ul id="modemenu" hidden></ul></div>
+ </aside>
+ <button class="nova-scrim" aria-label="{{ _('Close') }}" hidden></button>
+ <div class="nova-workspace">
+ <header class="nova-topbar">
+  <button id="nova-menu-toggle" type="button" aria-controls="nova-sidebar" aria-expanded="false" aria-label="{{ _('Toggle navigation') }}"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <div class="nova-breadcrumb"><span>OpenWrt</span><span aria-hidden="true">/</span><strong id="nova-context">{{ dispatched?.title ? _(dispatched.title) : _('Overview') }}</strong></div>
+  <div id="indicators"></div>
+  <a class="nova-language-link" href="{{ dispatcher.build_url('admin/system/system') }}" title="{{ _('Language and Style') }}" aria-label="{{ _('Language and Style') }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c5 5 5 13 0 18-5-5-5-13 0-18"/></svg><span lang="{{ dispatcher.lang }}">{{ dispatcher.lang == 'fa' ? 'فارسی' : (dispatcher.lang == 'en' ? 'English' : _('Language')) }}</span></a>
+  <button id="nova-direction" type="button" dir="ltr" aria-pressed="{{ rtl ? 'true' : 'false' }}" title="{{ _('Switch layout direction') }}">{{ _('RTL / LTR') }}</button>
+ </header>
+ <main id="maincontent" class="nova-main">
+  <div class="nova-page-heading flex items-center justify-between gap-4"><div><span class="nova-eyebrow">{{ _('Network operations') }}</span><h1 id="nova-page-title">{{ dispatched?.title ? _(dispatched.title) : _('Overview') }}</h1></div><span class="nova-page-version">NOVA <b>2.8.1</b></span></div>
+  <div id="tabmenu" style="display:none"></div>
+  {% if (getuid() == 0 && getspnam('root')?.pwdp === ''): %}
+   <div class="alert-message warning"><strong>{{ _('No password set!') }}</strong><p>{{ _('Please configure a root password to protect the web interface.') }}</p><a href="{{ dispatcher.build_url('admin/system/admin') }}">{{ _('Administration') }}</a></div>
+  {% endif %}
+  {% if (board.rootfs_type == 'initramfs'): %}
+   <div class="alert-message warning">{{ _('System running in recovery (initramfs) mode.') }}</div>
+  {% endif %}
+  <noscript><div class="alert-message warning">{{ _('JavaScript required!') }}</div></noscript>
+{% endif %}

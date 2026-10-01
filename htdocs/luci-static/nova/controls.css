@@ -1,0 +1,93 @@
+/* NOVA 2.3: native controls, not replacement widgets or configuration logic. */
+body.nova{--focus-color-rgb:120,97,223;--nova-focus:#7861df;--nova-surface:#fcfbff}
+
+/* Every tab remains owned by LuCI, with one horizontally scrollable rail. */
+body.nova .tabs,body.nova .cbi-tabmenu{flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;scrollbar-color:#b6a7e8 transparent;scroll-padding-inline:12px;overscroll-behavior-inline:contain}
+body.nova .tabs>li,body.nova .cbi-tabmenu>li{flex:0 0 auto;min-width:0}
+body.nova .tabs>li>a,body.nova .cbi-tabmenu>li>a{white-space:nowrap;min-height:42px;display:flex;align-items:center;font-weight:500}
+body.nova .tabs>li>a:hover,body.nova .cbi-tabmenu>li>a:hover{background:#ffffffb3;color:#6650b8}
+body.nova .tabs>li.active>a,body.nova .cbi-tabmenu>li.cbi-tab>a{background:#fff;color:#6244bd;box-shadow:0 3px 12px #49336a14}
+
+/* Override the functional base's blue !important focus border, including inputs
+   used as buttons. Invalid controls get their own red state below. */
+body.nova input:focus,body.nova select:focus,body.nova textarea:focus,body.nova .cbi-dropdown:focus,body.nova .cbi-dropdown[open]{--focus-color-rgb:120,97,223;border-color:#7861df!important;outline:3px solid #7861df26;outline-offset:2px;box-shadow:none}
+body.nova button:focus-visible,body.nova a:focus-visible,body.nova .cbi-dynlist>.item:focus-visible{outline:3px solid #7861df88;outline-offset:3px;box-shadow:none}
+body.nova .cbi-input-invalid,body.nova .cbi-value-error input,body.nova .cbi-input-invalid:focus{border-color:#d95772!important;color:#ad3650;outline-color:#d9577233}
+body.nova input:disabled,body.nova select:disabled,body.nova textarea:disabled{background:#f0f1f6;opacity:.65}
+
+/* Keep LuCI's open/preview/display attributes and calculated menu geometry. */
+body.nova .cbi-dropdown:not(.btn):not(.cbi-button){border-radius:10px;min-height:42px;min-width:0;color:#4c4565;background:#fcfbff;align-items:stretch}
+body.nova .cbi-dropdown:not(.btn):not(.cbi-button)>ul:not(.dropdown){border-radius:10px}
+body.nova .cbi-dropdown:not(.btn):not(.cbi-button)>ul>li{padding:9px 12px;min-height:40px;font-size:14px}
+body.nova .cbi-dropdown>.open{padding-inline:10px;min-width:32px;color:#8d7aaa;border-inline-start:1px solid #e8e3f1}
+body.nova .cbi-dropdown>.more{color:#8d7aaa}
+body.nova .cbi-dropdown[open]>ul.dropdown{background:#fff;border:1px solid #ddd5ef;border-radius:12px;box-shadow:0 14px 35px #30204a24;scrollbar-width:thin;scrollbar-color:#b6a7e8 #f5f3fa}
+body.nova .cbi-dropdown[open]>ul.dropdown>li{padding:10px 13px;border-bottom:1px solid #f0edf6;min-height:42px;white-space:normal;overflow-wrap:anywhere;text-align:start}
+body.nova .cbi-dropdown[open]>ul.dropdown>li[selected]{background:#f0eaff;color:#6048ae}
+body.nova .cbi-dropdown[open]>ul.dropdown>li.focus,body.nova .cbi-dropdown[open]>ul.dropdown>li:hover,body.nova .cbi-dropdown[open]>ul.dropdown>li[selected].focus{background:#6d55db;color:#fff;background-image:none}
+body.nova .cbi-dropdown>ul>li img{margin-right:0;margin-inline-end:6px}
+body.nova .cbi-dropdown>ul>li>form>input[type=checkbox]{margin:0;margin-inline-end:8px}
+body.nova .cbi-dropdown.btn>.open,body.nova .cbi-dropdown.cbi-button>.open{margin-left:0;margin-inline-start:8px;border-left:0;border-inline-start:1px solid currentColor}
+body.nova .cbi-dropdown.btn>ul:not(.dropdown),body.nova .cbi-dropdown.cbi-button>ul:not(.dropdown){margin:0!important}
+
+/* Editable lists retain native drag, keyboard, add and delete behavior.
+   The remove glyph intentionally stays physically RIGHT: ui.DynamicList's
+   hit test is rect.right - clientX, even in an RTL document. Do not mirror it. */
+body.nova .cbi-dynlist{min-width:0;width:min(100%,380px);max-width:100%;gap:6px}
+body.nova .cbi-dynlist>.item{margin:0;padding:10px 38px 10px 12px;border:1px solid #e0d7ef;background:#f7f3ff;color:#65547e;border-radius:10px;box-shadow:none;word-break:normal;overflow-wrap:anywhere;min-height:42px}
+body.nova .cbi-dynlist>.item::after{right:-1px;left:auto;width:32px;padding:0;justify-content:center;border-color:#e0d7ef;background:#f0eafa;color:#ad5474;border-radius:0 10px 10px 0;font-size:18px}
+body.nova .cbi-dynlist>.add-item{gap:6px;align-items:stretch;min-width:0}
+body.nova .cbi-dynlist>.add-item>input,body.nova .cbi-dynlist>.add-item>.cbi-dropdown{min-width:0}
+body.nova .cbi-dynlist>.add-item>.cbi-button{flex:0 0 auto;min-width:42px}
+
+/* A consistent, readable form language, including legacy Lua/PassWall forms. */
+body.nova .cbi-value{padding-block:14px;border-bottom-color:#f0edf6;gap:12px}
+body.nova .cbi-value>label.cbi-value-title{font-weight:500;line-height:1.9;color:#514963}
+body.nova .cbi-value-description{line-height:1.9;color:#797187}
+body.nova .cbi-map-descr,body.nova .cbi-section-descr{line-height:1.9}
+body.nova textarea{border-radius:10px;line-height:1.8;padding:12px}
+body.nova .cbi-value-field>.cbi-checkbox,body.nova .cbi-value-field>div>.cbi-radio{min-height:42px;height:auto;gap:8px}
+body.nova .cbi-checkbox input[type=checkbox],body.nova .cbi-radio input[type=radio]{margin:0;margin-inline-end:7px}
+body.nova .cbi-section .cbi-section{box-shadow:none;border-color:#ece6f4;border-radius:13px;padding:16px}
+
+/* Legacy PassWall actions can wrap; never replace or reorder native nodes. */
+body.nova .nova-data-table .pw-actions>div{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:6px;min-width:0}
+body.nova .nova-data-table .pw-actions .cbi-button{flex:0 0 auto;margin:0;white-space:nowrap;min-height:38px}
+body.nova .nova-data-table .pw-actions .drag-handle{min-width:32px;min-height:38px;border-radius:7px;background:#f4f0fa;color:#9182a7;cursor:grab}
+body.nova .nova-data-table .pw-remark{color:#5c4c75;font-weight:500}
+body.nova .nova-data-table td,body.nova .nova-data-table .td{vertical-align:middle}
+body.nova .cbi-button:hover,body.nova .btn:hover{background:#f1edfa;border-color:#b6a4dd;color:#695092;box-shadow:none}
+body.nova .cbi-button-positive:hover,body.nova .cbi-button-apply:hover,body.nova .cbi-button-add:hover{background:#5d45c8;color:white;border-color:#5d45c8}
+body.nova .cbi-button-negative:hover,body.nova .cbi-button-remove:hover{background:#ffeaf0;border-color:#e7a8b9;color:#a33250}
+
+/* Modals: original tabs, validation and button handlers remain untouched. */
+body.nova .modal{border-radius:20px;border-color:#e1d8ef;box-shadow:0 25px 85px #20162d40;scrollbar-width:thin;scrollbar-color:#b6a7e8 transparent;line-height:1.9}
+body.nova .modal>*{line-height:1.9}
+body.nova .modal>h3{font-size:21px;padding-bottom:16px;margin-bottom:20px;border-bottom:1px solid #eee7f5}
+body.nova .modal>.button-row{gap:8px;padding-top:15px;margin-top:18px;border-top:1px solid #eee7f5}
+body.nova .modal>.button-row>button:not(:last-of-type){margin-right:0}
+body.nova .modal>.button-row>button:first-of-type{margin-right:0;margin-inline-end:auto}
+body.nova .modal .cbi-section{margin-bottom:16px}
+body.nova .modal .nova-stat-label{font-size:12px;color:#8d809d}
+body.nova .modal .nova-stat-value{font-size:14px;color:#615074}
+body.nova .alert-message{border-radius:12px;line-height:1.9}
+body.nova .cbi-progressbar>div{background:linear-gradient(90deg,#a18bea,#7861df);border-radius:5px}
+body.nova pre,body.nova textarea#syslog{background:#1c2037;border-color:#34304e;color:#e3dff2;line-height:1.9}
+
+@media(max-width:800px){
+ body.nova .tabs>li>a,body.nova .cbi-tabmenu>li>a{padding:10px 13px;min-height:44px;font-size:13px}
+ body.nova .cbi-value{gap:7px;padding-block:13px}
+ body.nova .cbi-value>label.cbi-value-title{padding:0;width:100%;flex-basis:auto}
+ body.nova .cbi-value-field .cbi-input-text,body.nova .cbi-value-field .cbi-input-select,body.nova .cbi-value-field>.cbi-dropdown{width:100%}
+ body.nova .cbi-dropdown:not(.btn):not(.cbi-button){width:100%;min-width:0}
+ body.nova .cbi-dynlist{width:100%}
+ body.nova .nova-card-table .td{gap:10px;padding:12px}
+ body.nova .nova-card-table .pw-actions .cbi-button{min-height:42px}
+ body.nova .modal{padding:18px 14px;border-radius:16px;max-height:92vh;margin:4vh auto;min-width:0}
+ body.nova .modal .cbi-tabmenu{top:-18px}
+ body.nova .modal>h3{font-size:18px}
+ body.nova .modal>.button-row>button{min-height:42px}
+ body.nova .cbi-page-actions{gap:7px;padding:10px}
+ body.nova .cbi-page-actions .cbi-button{min-height:42px}
+}
+@media(prefers-reduced-motion:reduce){body.nova .tabs,body.nova .cbi-tabmenu{scroll-behavior:auto}}

@@ -1,0 +1,11 @@
+{% if (!blank_page): %}
+ </main>
+ <footer class="nova-footer"><span><bdi dir="ltr">{{ version.distname }} {{ version.distversion }} · {{ version.luciname }}</bdi></span><span><bdi dir="ltr">NOVA / 2.8.1</bdi></span></footer>
+ </div>
+ <script>L.require('menu-nova-v260-r1')</script>
+ <script>L.require('nova-monitor-v270-r1').then(function(m){m.start();})</script>
+ <script>L.require('nova-firewall-v281-r1').then(function(m){m.start();})</script>
+{% endif %}
+ <script src="{{ media }}/nova.js?v=2.8.0-r1"></script>
+</body>
+</html>

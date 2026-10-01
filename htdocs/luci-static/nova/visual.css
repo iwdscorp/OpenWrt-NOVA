@@ -1,0 +1,122 @@
+@font-face{font-family:Estedad;src:url(estedad-regular.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:Estedad;src:url(estedad-medium.woff2) format('woff2');font-weight:500 600;font-style:normal;font-display:swap}
+@font-face{font-family:Estedad;src:url(estedad-bold.woff2) format('woff2');font-weight:650 900;font-style:normal;font-display:swap}
+:root{--nova-font:Estedad,Vazirmatn,sans-serif;--nova-teal:#6554d9;--nova-line:#e2e6f0;--nova-ink:#24283e;--nova-muted:#727a93;--primary-color-high:#6554d9;--primary-color-medium:#5846c8;--primary-color-low:#4938b3}
+body.nova{font-family:var(--nova-font);font-size:15px;line-height:1.9;background:#f5f6fb;color:#24283e;-webkit-font-smoothing:antialiased}
+body.nova h1,body.nova h2,body.nova h3,body.nova h4,body.nova input,body.nova select,body.nova button,body.nova textarea,body.nova .nova-stat-value,body.nova .nova-stat-label,body.nova .nova-summary-item strong,body.nova .nova-card-table .td::before{font-family:var(--nova-font)!important}
+body.nova pre,body.nova code,body.nova textarea#syslog{font-family:Consolas,monospace!important}
+body.nova .nova-sidebar{background:linear-gradient(175deg,#191e35,#11172d);border-color:#282e47;padding-top:30px}
+body.nova .nova-brand>span{letter-spacing:2px;font-size:26px}
+body.nova .nova-device{background:#242b44;border-color:#323a54;border-radius:14px;padding:17px}
+body.nova .nova-nav-group.active>.nova-nav-toggle{background:#37305b!important;color:#d1caff!important}
+body.nova .nova-submenu a[aria-current=page]{background:#292842;color:#c5bbff!important;box-shadow:inset 3px 0 0 #9981ff;font-weight:500}
+html[dir=rtl] body.nova .nova-submenu a[aria-current=page]{box-shadow:inset -3px 0 0 #9981ff}
+body.nova .nova-nav-toggle,body.nova .nova-nav-link{font-size:14px;padding:12px!important}
+body.nova .nova-topbar{height:74px;background:#ffffffed;backdrop-filter:blur(18px)}
+body.nova .nova-main{padding:30px 36px;max-width:1700px}
+body.nova .nova-page-heading{margin-bottom:25px}
+body.nova .nova-page-heading h1{font-size:32px;font-weight:700;line-height:1.7}
+body.nova .nova-eyebrow{color:#8e86b4;letter-spacing:2px;font-size:10px}
+body.nova .nova-page-version{background:#fff;border-color:#e4e2f0;color:#9185b5}
+body.nova .tabs,body.nova .cbi-tabmenu{background:#ebeaf4;border-color:#e3e1ed;padding:5px;border-radius:12px;gap:5px}
+body.nova .tabs>li>a,body.nova .cbi-tabmenu>li>a{font-size:14px;padding:10px 17px;border-radius:9px;color:#74708b}
+body.nova .tabs>li.active>a,body.nova .cbi-tabmenu>li.cbi-tab>a{color:#6a50d6;box-shadow:0 3px 10px #60548612}
+body.nova .cbi-section{padding:22px;border-radius:17px;border-color:#e1e5ef;box-shadow:0 5px 25px #34305504}
+body.nova .cbi-section>h3{font-size:18px;font-weight:700;border-color:#eceef5;padding-bottom:17px}
+body.nova .cbi-value>label.cbi-value-title{font-size:14px;color:#525c79}
+body.nova .cbi-value-description{font-size:13px;color:#80869e}
+body.nova input:not([type=checkbox]):not([type=radio]):not([type=button]):not([type=submit]),body.nova select,body.nova .cbi-dropdown{border-radius:9px;min-height:41px;border-color:#d9dce9;background-color:#fcfcff;font-size:14px}
+body.nova input[type=checkbox],body.nova input[type=radio]{accent-color:#7861df;width:17px;height:17px}
+body.nova .cbi-button,body.nova .btn{border-radius:9px;min-height:37px;padding:8px 13px;font-size:13px}
+body.nova .cbi-button-apply,body.nova .cbi-button-save,body.nova .cbi-button-positive,body.nova .cbi-button-add{background:#6d55db;border-color:#6d55db;box-shadow:0 3px 9px #6d55db16;color:#fff}
+body.nova .cbi-button-edit{background:#f0ebff!important;color:#7355d5!important;border-color:#dbd1f7!important}
+body.nova .cbi-page-actions{border-radius:13px;background:#fffffff2;backdrop-filter:blur(14px);padding:13px;box-shadow:0 -4px 24px #49416508}
+body.nova .nova-data-table{border-radius:14px;border-color:#e2e5f1}
+body.nova .nova-data-table th,body.nova .nova-data-table .th{font-size:13px;background:#f1eff9;color:#6e688d;padding:16px}
+body.nova .nova-data-table td,body.nova .nova-data-table .td{font-size:14px;padding:17px;color:#4c5473}
+body.nova .nova-data-table .tr:nth-child(even)>.td{background:#fcfcff}
+body.nova .nova-data-table .tr:hover>.td{background:#f8f5ff}
+
+/* A real telemetry workspace; charts deliberately run left-to-right. */
+.nova-insights{margin:4px 0 25px;min-width:0}
+.nova-live-tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:19px}
+.nova-live-tile{position:relative;display:flex;flex-direction:column;gap:5px;background:#fff;border:1px solid #e4e7f1;border-radius:16px;padding:20px;min-width:0;box-shadow:0 5px 18px #3c335804}
+.nova-tile-icon{display:grid;place-items:center;width:37px;height:37px;border-radius:11px;background:#eeeafb;color:#8266dc;position:absolute;inset-inline-end:18px;inset-block-start:19px}
+.nova-tile-icon svg{width:21px;height:21px}
+.nova-tile-label{font-size:12px;color:#8a8ca2;padding-inline-end:43px}
+.nova-live-tile strong{font-size:28px;line-height:1.8;font-weight:700;letter-spacing:-.5px;color:#34344e;unicode-bidi:isolate}
+.nova-live-tile small{font-size:11px;color:#9a9db0;overflow-wrap:anywhere}
+.nova-tile-download .nova-tile-icon{background:#e4f7f2;color:#1cad95}
+.nova-tile-upload .nova-tile-icon{background:#f1eafc;color:#9a6bd4}
+.nova-tile-memory .nova-tile-icon{background:#fff2e4;color:#e5a248}
+.nova-insights-grid{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(270px,1fr);gap:20px;align-items:stretch}
+.nova-traffic-panel,.nova-health-panel{padding:23px;background:#fff;border:1px solid #e4e7f1;border-radius:18px;min-width:0;box-shadow:0 6px 22px #3c335804}
+.nova-panel-heading{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:20px}
+body.nova .nova-panel-heading h2{font-size:18px;font-weight:700;margin:4px 0 0;line-height:1.8}
+.nova-panel-kicker{font-size:10px;color:#9a96b0;letter-spacing:.5px}
+.nova-live-pill{display:flex;align-items:center;gap:7px;background:#e9f8f1;color:#439879;border:1px solid #d5eee1;border-radius:7px;padding:5px 9px;font-size:11px;white-space:nowrap}
+.nova-live-pill::before{content:'';width:6px;height:6px;background:#44b88a;border-radius:50%;box-shadow:0 0 0 3px #44b88a12}
+.nova-live-pill.error{background:#fff0f0;color:#b55a65;border-color:#f2d4db}.nova-live-pill.error::before{background:#b55a65}
+.nova-chart-toolbar{display:flex;justify-content:space-between;gap:10px;align-items:center;margin:0 0 22px}
+body.nova select.nova-chart-select{max-width:230px;width:auto;min-height:34px;padding:6px 10px;font-size:12px;background:#fafaff;border-color:#e3e3f0;direction:ltr}
+.nova-chart-controls{display:flex;gap:4px;background:#f6f5fb;padding:4px;border-radius:9px}
+body.nova .nova-chart-range,body.nova .nova-chart-pause{background:transparent;border:0;box-shadow:none;color:#9995ad;font-size:11px;padding:5px 8px;border-radius:6px;white-space:nowrap}
+body.nova .nova-chart-range.active{background:white;color:#7961cc;box-shadow:0 2px 5px #3c33580a}
+body.nova .nova-chart-pause[aria-pressed=true]{background:#eee7fb;color:#7355d5}
+.nova-chart-body{display:grid;grid-template-columns:68px minmax(0,1fr);gap:8px;direction:ltr}
+.nova-chart-scale{display:flex;flex-direction:column;justify-content:space-between;height:211px;font-size:10px;color:#a4a7ba;text-align:start;padding:0 0 0 3px}
+.nova-chart-canvas{height:211px;position:relative;min-width:0;direction:ltr}
+.nova-chart-canvas svg{display:block;width:100%;height:210px;overflow:visible;cursor:crosshair;touch-action:pan-y}
+.nova-chart-empty{position:absolute;inset:0;display:grid;place-content:center;padding:20px;color:#9b9caf;font-size:12px;text-align:center;pointer-events:none}
+.nova-chart-tooltip{position:absolute;inset-block-start:9px;inset-inline-start:12px;background:#282b44f0;color:#fff;font-size:10px;padding:8px 12px;border-radius:8px;pointer-events:none;max-width:calc(100% - 24px);box-shadow:0 5px 20px #24243e22}
+.nova-chart-times{display:flex;justify-content:space-between;margin:13px 0 0 76px;color:#a8a8ba;font-size:10px}
+.nova-chart-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1px solid #f0eef7;padding-top:17px;margin-top:20px}
+.nova-chart-foot small{font-size:10px;color:#b1adbf;line-height:1.7}
+.nova-chart-legends{display:flex;gap:10px;flex:none}
+body.nova .nova-chart-legend{display:flex;align-items:center;gap:6px;border:0;box-shadow:none;background:none;padding:3px 0;font-size:11px;color:#858299}
+.nova-chart-legend i{width:7px;height:7px;border-radius:50%;background:#16b8a6}.nova-chart-legend.tx i{background:#8b5cf6}.nova-chart-legend.muted{opacity:.35}
+.nova-health-panel .nova-panel-heading>svg{width:20px;height:20px;color:#b6afce}
+.nova-memory-ring{--nova-memory:0%;width:110px;height:110px;margin:2px auto 10px;border-radius:50%;background:conic-gradient(from -90deg,#9d83ef 0 var(--nova-memory),#f0ecfa var(--nova-memory) 100%);display:grid;place-items:center;position:relative}
+.nova-memory-ring>div{width:90px;height:90px;border-radius:50%;background:white;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px}
+.nova-memory-ring strong{font-size:27px;color:#4b416b;line-height:1.5}
+.nova-memory-ring span{font-size:10px;color:#a19bb1}
+body.nova .nova-health-panel>p{font-size:11px;color:#a29bb1;text-align:center;margin:0 auto 20px;line-height:2}
+.nova-topology{display:flex;align-items:center;gap:13px;border-top:1px solid #f0eef7;border-bottom:1px solid #f0eef7;padding:14px 0;margin-bottom:10px}
+.nova-topology-icon{width:37px;height:37px;border-radius:10px;background:#f2eefb;color:#9974d5;display:grid;place-items:center;flex:none}.nova-topology-icon svg{width:22px;height:22px}
+.nova-topology small{display:block;font-size:10px;color:#aaa1bb}.nova-topology strong{font-size:14px;font-weight:500;color:#574872}
+.nova-link-details>div{display:flex;justify-content:space-between;gap:10px;padding:5px 0;font-size:10px;color:#a59bb7}.nova-link-details bdi{color:#726283;font-size:11px;overflow-wrap:anywhere;max-width:70%}
+
+/* Recompose the native interface row without touching its controls. */
+body.nova #cbi-network-interface .cbi-section-tbody{grid-template-columns:1fr;gap:18px}
+body.nova #cbi-network-interface .cbi-section-table-row{border-color:#e2deef;border-radius:16px;box-shadow:0 5px 22px #62527f07;overflow:visible}
+body.nova #cbi-network-interface .ifacebox{position:relative;padding:19px 22px;background:linear-gradient(110deg,#f8f4ff,#f9faff);border-color:#ece6f5;border-radius:16px 16px 0 0}
+body.nova #cbi-network-interface .ifacebox-head{font:700 23px/1.7 var(--nova-font);gap:12px;color:#42395f}
+body.nova #cbi-network-interface .ifacebox-head::before{width:34px;height:34px;border-radius:10px;background:#e6defa!important;box-shadow:none;mask:none;content:'';background-image:url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="%238869d1" stroke-width="1.6" viewBox="0 0 32 32"%3E%3Crect x="7" y="7" width="18" height="8" rx="2"/%3E%3Cpath d="M16 15v7m-7 4v-4h14v4m-7-4v4"/%3E%3C/svg%3E')!important;background-size:cover!important}
+body.nova .nova-interface-status{display:inline-flex;align-items:center;gap:5px;color:#a993ad;background:#f2eaf1;border:1px solid #eadfe9;border-radius:6px;padding:3px 7px;font-size:10px;font-weight:500;line-height:1.7}
+body.nova .nova-interface-up .nova-interface-status{color:#55a58d;background:#e7f6f0;border-color:#d7eee4}
+.nova-interface-status::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor}
+body.nova #cbi-network-interface .ifacebox-body{background:#fff;border:1px solid #e9e6f1;border-radius:9px;padding:7px 10px;font-size:12px}
+body.nova #cbi-network-interface .ifacebox-body>small{font:500 13px var(--nova-font);color:#8c83a3}
+body.nova #cbi-network-interface [id$='-ifc-description'],body.nova #cbi-network-interface .cbi-section-table-row:only-child [id$='-ifc-description']{grid-template-columns:repeat(4,minmax(0,1fr));padding:5px 22px 16px;gap:0 20px}
+body.nova #cbi-network-interface .nova-stat{padding:13px 0;gap:6px;border-color:#f0edf6}
+body.nova #cbi-network-interface .nova-stat:nth-of-type(odd){padding-inline-end:0}
+body.nova #cbi-network-interface .nova-stat-label{font-size:12px;color:#aaa2bb}
+body.nova #cbi-network-interface .nova-stat-value,body.nova #cbi-network-interface .nova-stat-technical .nova-stat-value{font:500 14px/1.8 var(--nova-font);color:#655776;letter-spacing:0}
+body.nova #cbi-network-interface .cbi-section-actions{padding:12px 20px!important;background:#fdfcff!important;border-color:#f0edf5!important;border-radius:0 0 16px 16px}
+body.nova #cbi-network-interface .cbi-button{font-size:12px;min-height:35px}
+body.nova .nova-summary-item{border-radius:15px;border-top-color:#9580db}.nova-summary-item strong{font-size:24px!important}
+@media(min-width:1201px){body[data-page=admin-status-overview] .nova-status-summary{display:none}}
+@media(max-width:1200px){.nova-insights-grid{grid-template-columns:minmax(0,1.7fr) minmax(230px,1fr)}.nova-traffic-panel,.nova-health-panel{padding:18px}.nova-chart-toolbar{flex-wrap:wrap}.nova-live-tile{padding:17px}.nova-live-tile strong{font-size:23px}}
+@media(max-width:1000px){.nova-insights-grid{grid-template-columns:1fr}.nova-health-panel{display:grid;grid-template-columns:140px minmax(0,1fr);gap:10px 20px;align-items:center}.nova-health-panel .nova-panel-heading{grid-column:1/-1;margin-bottom:0}.nova-memory-ring{grid-row:2/4;margin:0}.nova-health-panel>p{margin:0!important;text-align:start!important}.nova-topology{margin:0}.nova-link-details{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:0 15px}}
+@media(max-width:800px){body.nova .nova-main{padding:20px 15px}.nova-live-tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:13px}.nova-live-tile{padding:13px;border-radius:13px}.nova-tile-label{font-size:10px;padding-inline-end:25px}.nova-tile-icon{width:25px;height:25px;inset-inline-end:11px;inset-block-start:12px;border-radius:8px}.nova-tile-icon svg{width:15px;height:15px}.nova-live-tile strong{font-size:20px}.nova-live-tile small{font-size:9px}.nova-insights-grid{gap:13px}.nova-traffic-panel,.nova-health-panel{border-radius:14px;padding:15px}body.nova .nova-panel-heading h2{font-size:16px}.nova-chart-scale{font-size:9px}.nova-chart-body{grid-template-columns:52px minmax(0,1fr);gap:5px}.nova-chart-times{margin-left:57px;font-size:9px}.nova-chart-foot{flex-wrap:wrap;gap:7px}.nova-health-panel{grid-template-columns:100px minmax(0,1fr);gap:8px 12px}.nova-memory-ring{width:96px;height:96px}.nova-memory-ring>div{width:78px;height:78px}.nova-memory-ring strong{font-size:22px}.nova-health-panel>p{font-size:10px!important}.nova-topology-icon{width:30px;height:30px}.nova-topology small{font-size:9px}.nova-link-details{grid-template-columns:1fr}.nova-live-pill{font-size:9px;padding:4px 6px}.nova-panel-heading{margin-bottom:13px}.nova-chart-toolbar{margin-bottom:17px}body.nova .nova-chart-pause,body.nova .nova-chart-range{font-size:10px}.nova-chart-controls{width:100%;justify-content:space-between}body.nova .nova-chart-select{width:100%;max-width:100%}body.nova .nova-page-heading h1{font-size:27px}body.nova .cbi-section{padding:17px 12px}body.nova .cbi-value>label.cbi-value-title{font-size:14px}body.nova .nova-card-table .td::before{font-size:12px}body.nova .nova-data-table td,body.nova .nova-data-table .td{font-size:13px}body.nova #cbi-network-interface [id$='-ifc-description'],body.nova #cbi-network-interface .cbi-section-table-row:only-child [id$='-ifc-description']{grid-template-columns:repeat(2,minmax(0,1fr));padding-inline:15px;gap:0 13px}body.nova #cbi-network-interface .ifacebox{padding:15px;flex-wrap:wrap}body.nova #cbi-network-interface .ifacebox-head{font-size:21px}body.nova #cbi-network-interface .nova-stat-value{font-size:13px}body.nova #cbi-network-interface .cbi-section-actions{padding:12px!important}.nova-insights{margin-bottom:18px}}
+@media(prefers-reduced-motion:reduce){.nova-insights *{transition:none!important;animation:none!important}}
+/* Keep the native interface cards visible below the live workspace. */
+@media(min-width:1001px){.nova-traffic-panel,.nova-health-panel{padding:19px}.nova-panel-heading{margin-bottom:14px}.nova-health-panel .nova-topology{padding:10px 0;margin-bottom:5px}.nova-health-panel>p{margin-bottom:10px!important}.nova-link-details>div{padding:3px 0}.nova-chart-toolbar{margin-bottom:17px}.nova-chart-foot{margin-top:15px;padding-top:13px}}
+.nova-tile-label{font-size:13px;font-weight:500}.nova-live-tile small{font-size:12px}.nova-panel-kicker{font-size:11px}.nova-chart-foot small{font-size:11px}.nova-link-details>div{font-size:12px}.nova-link-details bdi{font-size:12px}.nova-topology small{font-size:11px}
+body.nova #cbi-network-interface .ifacebox{background:linear-gradient(110deg,#262c4c,#393358);border-bottom:0}
+body.nova #cbi-network-interface .ifacebox-head{color:#f5f1ff}
+body.nova #cbi-network-interface .ifacebox-body{background:#ffffff0c;border-color:#ffffff1c;color:#ded7f0}
+body.nova #cbi-network-interface .ifacebox-body>small{color:#ded7f0}
+body.nova #cbi-network-interface .ifacebox-body img{filter:brightness(0) invert(1);opacity:.7}
+body.nova .cbi-page-actions .cbi-button-save{background:#f0eafa;color:#7e5fba;border-color:#d5c3ed}
+@media(max-width:800px){.nova-tile-label{font-size:11px}.nova-live-tile small{font-size:10px}.nova-panel-kicker{font-size:10px}.nova-chart-foot small{font-size:10px}.nova-link-details>div{font-size:11px}.nova-topology small{font-size:10px}}

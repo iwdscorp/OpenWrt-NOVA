@@ -1,0 +1,73 @@
+NOVA 2.8.0-r1 — policy-oriented firewall workspace verification
+============================================================
+Target: local OpenWrt 25.12.5 x86_64 / LuCI openwrt-25.12 / PassWall 2.
+APK SHA256: d22c4ed23bd3c5b0351ed16ed6441bb759ea60cea59747ba90222892d0760586
+
+Implemented
+-----------
+Separate purpose-specific Zones/forwarding, Traffic policy, DNAT, SNAT and IPset
+workspaces. Compact horizontally scrollable policy tables with sticky headers,
+source/destination/service/schedule/action columns, green allow/red deny/blue NAT
+badges, search, configured-state filter and sequence/source-destination grouping.
+Three explained zone-default policies, native member networks/masquerade state,
+actual configured one-way inter-zone forwarding paths. No duplicated native lists
+in the default workspace; the complete native map is preserved in a disclosure.
+Edit/Add delegates to the actual LuCI buttons. Delete/Clone/Reorder/general flags/
+offloading remain in that native editor. Save & Apply and reset stay LuCI-owned.
+SNAT UCI src displayed correctly as outbound zone, with MASQUERADE automatic
+address and ACCEPT no-rewrite semantics, not a misleading traffic-allow badge.
+Match details are plain text with explicit ICMP/MAC/device/mark/limit/log/IPset
+and other advanced options; NAT schedules available in details. Configured text
+is appended through text nodes, bypassing native E's scalar-as-HTML behavior.
+Pending inline checkbox/dropdown state is read. Native rerender reattaches the
+presentation; migration/loading/missing-grid fallback leaves the native page.
+Persian + English own copy, existing fonts and logical direction/alignment.
+No UCI/RPC writes by the module; no cloned native controls or reordered native cells.
+
+Confirmed
+---------
+npm run build: PASS. npm test: PASS, including eight strict CSS parses.
+Code-only LinkeDOM tests use installed LuCI E's scalar/array semantics, preserve
+native map/row/cell/control node identity and handlers, proxy Edit/Add once,
+disable absent/readonly native edit buttons, read pending widget values, preserve
+UCI object order during grouping, handle filter misses/empty lists/migration,
+automatically reconnect after DOM mutations, and insert configured HTML as text.
+All five pages exercised in fa/en. Native fixture collected read-only using ubus
+uci get: nine actual traffic rules, LAN/WAN zones and one lan -> wan forwarding.
+Synthetic DNAT/SNAT/IPset/disabled/malicious-name cases exist only in code tests.
+Fixture: source/scripts/fixtures/firewall-native.json.
+Regression telemetry/gettext/language/native-control tests remain PASS.
+Actual APK upgrade 2.7.0-r1 -> 2.8.0-r1: PASS; uhttpd restarted successfully.
+Header/footer/login compile with installed native ucode: PASS.
+Native fa: 3542 expected forms, zero missing/differing in both catalog modes.
+Native en: 3548 checks, zero differing, fa -> en -> fa in both catalog modes.
+Reports: NOVA-2.8-EN-NATIVE-VERIFICATION.json, NOVA-2.8-FA-NATIVE-VERIFICATION.json.
+Installed hashes equal source:
+nova-firewall-v280-r1.js: b420ace737a3af38964282616ac1c52517f87d0e510291fce86601820cf6c2ac
+firewall.css: 5fb8f31df74c7151deaacfffaf3bf404d580b4fd099b3c4c791fe075cc82b908
+nova.js: 95b123a847979ca2bc67a40ae19e6c94a1f47ab8ec974acf797aab286007f3a1
+tailwind.css: c03d72d16d237967894014df0e7fadb42a9450b0933c05ade30e49ef36dfb57e
+header.ut: 0ab89b8aff05fe16687a8be194f25cab3639f04e19a3992e09e77f7f136c5637
+footer.ut: 4578463db48258519da59d1843ecf50a123f93191a6b0f34a7fa461910175083
+Configuration unchanged before/after upgrade:
+network: 09aea78bb66f97cf280f448d5cafd43124ac89fd1892490c3f5bf49a6e663a43
+firewall: f7609b4d275188b50d8797d77bae6eabe135ee061619b07cb3d31767809f859f
+passwall2: 5751ddc9bab7a7b32234ce8288166e3de57a9f205c3545af94b4ef5eb4cabdf1
+Lab remains NOVA/fa. No firewall/network/PassWall rule was added or rewritten.
+
+Boundaries
+----------
+This is an OpenWrt presentation, inspired by FortiGate sequence/interface-pair
+views, not a FortiGate firewall engine or UTM suite. No invented hit counters,
+policy lookup, IPS/app-control, traffic-per-rule graphs or security verdicts.
+Policy list is UCI configuration, not all live nftables/generated PassWall rules.
+No fresh browser rendered/visual/mobile QA or live native modal/save/apply/reorder
+checks were executed. Previously blocked localhost browser access was not bypassed
+with another browser, raw CDP, HTTP page fetch or indirect screenshots. Code-only
+DOM tests are not rendered-page or full native interactive workflow evidence.
+Other firmware versions and firewall3 migration are not runtime-verified.
+Existing APK repository-cache warnings and WSL read-only disk-fallback warning
+were retained; package verify/install succeeded without changing repos or global
+signature verification. Only the unsigned local package uses allow-untrusted.
+
+Design reference: https://docs.fortinet.com/document/fortigate/7.0.0/administration-guide/497952/policy-views-and-policy-lookup

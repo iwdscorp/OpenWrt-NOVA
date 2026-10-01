@@ -1,0 +1,13 @@
+/* NOVA 2.4: one Arabic/Latin UI font, with native code and icon exceptions. */
+body.nova{--font-sans:Estedad,Vazirmatn,sans-serif;font-family:var(--font-sans)}
+body.nova :is(div,p,span,label,legend,a,li,th,td,dt,dd,option,optgroup,strong,b,small,em,abbr,bdi,h1,h2,h3,h4,h5,h6,input,button,select,textarea):not(.fa):not(.fas):not(.far):not(.fab):not(.glyphicon):not([class^="fa-"]):not([class*=" fa-"]){font-family:var(--nova-font)!important}
+body.nova svg text{font-family:var(--nova-font)!important}
+body.nova .nova-card-table .td::before,body.nova .cbi-progressbar::before{font-family:var(--nova-font)!important}
+/* Raw logs and configuration/code retain a monospace face, not old UI fonts. */
+body.nova pre,body.nova code,body.nova pre *,body.nova code *,body.nova textarea#syslog{font-family:Consolas,monospace!important}
+html[lang^=fa] body.nova .nova-eyebrow,html[lang^=fa] body.nova .nova-brand small{letter-spacing:0;font-size:12px;line-height:1.8}
+html[lang^=fa] body.nova .nova-eyebrow{font-weight:500}
+html[lang^=fa][dir=rtl] body.nova .cbi-value-title{direction:rtl!important;unicode-bidi:isolate;text-align:right}
+html[lang^=fa][dir=rtl] body.nova :is(.cbi-map-descr,.cbi-section-descr,.cbi-value-description){text-align:right}
+body.nova .nova-footer bdi{unicode-bidi:isolate}
+body.nova .nova-login-card input{direction:ltr}

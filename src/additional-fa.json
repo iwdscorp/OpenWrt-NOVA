@@ -1,0 +1,42 @@
+[
+ {"msgid":"SIM %d","msgstr":["سیم‌کارت %d"]},
+ {"msgid":"Require approx. %1024mB size for %d package(s) to install.","msgstr":["برای نصب %d بسته به حدود %1024mB فضا نیاز است."]},
+ {"msgid":"Require version %h %h, installed %h","msgstr":["نسخهٔ %h %h لازم است؛ نسخهٔ نصب‌شده %h"]},
+ {"msgid":"Size (%s)","msgstr":["اندازه (%s)"]},
+ {"msgid":"Suggested translations require approx. %1024mB additional space.","msgstr":["ترجمه‌های پیشنهادی به حدود %1024mB فضای اضافه نیاز دارند."]},
+ {"msgid":"~%1024mB compressed","msgstr":["حدود %1024mB فشرده"]},
+ {"msgid":"~%1024mB installed","msgstr":["حدود %1024mB پس از نصب"]},
+ {"msgid":"<var data-tooltip=\"NOTRACK\">Do not track</var> %{src?%{dest?forward:input}:output}","msgstr":["<var data-tooltip=\"NOTRACK\">ردیابی نشود</var> %{src?%{dest?هدایت:ورودی}:خروجی}"]},
+ {"msgid":"Incoming %{ipv6?%{ipv4?<var>IPv4</var> and <var>IPv6</var>:<var>IPv6</var>}:<var>IPv4</var>}%{proto?, protocol %{proto#%{next?, }%{item.types?<var class=\"cbi-tooltip-container\">%{item.name}<span class=\"cbi-tooltip\">ICMP with types %{item.types#%{next?, }<var>%{item}</var>}</span></var>:<var>%{item.name}</var>}}}%{mark?, mark <var%{mark.inv? data-tooltip=\"Match fwmarks except %{mark.num}%{mark.mask? with mask %{mark.mask}}.\":%{mark.mask? data-tooltip=\"Mask fwmark value with %{mark.mask} before compare.\"}}>%{mark.val}</var>}%{helper?, helper %{helper.inv?<var data-tooltip=\"Match any helper except &quot;%{helper.name}&quot;\">%{helper.val}</var>:<var data-tooltip=\"%{helper.name}\">%{helper.val}</var>}}","msgstr":["ورودی %{ipv6?%{ipv4?<var>IPv4</var> و <var>IPv6</var>:<var>IPv6</var>}:<var>IPv4</var>}%{proto?، پروتکل %{proto#%{next?, }%{item.types?<var class=\"cbi-tooltip-container\">%{item.name}<span class=\"cbi-tooltip\">ICMP با نوع‌های %{item.types#%{next?, }<var>%{item}</var>}</span></var>:<var>%{item.name}</var>}}}%{mark?، علامت <var%{mark.inv? data-tooltip=\"تطبیق علامت‌های دیوار آتش به‌جز %{mark.num}%{mark.mask? با ماسک %{mark.mask}}.\":%{mark.mask? data-tooltip=\"اعمال ماسک %{mark.mask} روی علامت دیوار آتش پیش از مقایسه.\"}}>%{mark.val}</var>}%{helper?، کمک‌کننده %{helper.inv?<var data-tooltip=\"تطبیق هر کمک‌کننده به‌جز &quot;%{helper.name}&quot;\">%{helper.val}</var>:<var data-tooltip=\"%{helper.name}\">%{helper.val}</var>}}"]},
+ {"msgid":"Unable to load log data: ","msgstr":["بارگذاری دادهٔ گزارش ممکن نیست: "]},
+ {"msgid":"The syslog output, pre-filtered for messages related to: ","msgstr":["خروجی گزارش سامانه، فیلترشده برای پیام‌های مرتبط با: "]}
+ ,{"msgid":"A <code>tag</code> is an alphanumeric label.","msgstr":["<code>tag</code> برچسبی شامل حروف و اعداد است."]}
+ ,{"msgid":"dnsmasq conditionally applies chosen DHCP options when a specific <code>tag</code> is encountered.","msgstr":["dnsmasq با مشاهدهٔ <code>tag</code> مشخص، گزینه‌های انتخاب‌شدهٔ DHCP را به‌صورت شرطی اعمال می‌کند."]}
+ ,{"msgid":"In other words: \"This <code>tag</code> gets these <code>option(6):&lt;opt-name&gt;,[&lt;value&gt;[,&lt;value&gt;]]</code>\".","msgstr":["به بیان دیگر: این <code>tag</code> این گزینه‌ها را دریافت می‌کند: <code>option(6):&lt;opt-name&gt;,[&lt;value&gt;[,&lt;value&gt;]]</code>."]}
+ ,{"msgid":"<code>tag</code>s do not do anything by themselves. They are labels that other directives test against.","msgstr":["برچسب‌های <code>tag</code> به‌تنهایی کاری انجام نمی‌دهند؛ دستورهای دیگر آن‌ها را برای تطبیق بررسی می‌کنند."]}
+ ,{"msgid":"Note: invalid <code>option(6):&lt;opt-name&gt;,[&lt;value&gt;[,&lt;value&gt;]]</code> combinations may cause dnsmasq to crash silently.","msgstr":["نکته: ترکیب نامعتبر <code>option(6):&lt;opt-name&gt;,[&lt;value&gt;[,&lt;value&gt;]]</code> ممکن است dnsmasq را بدون پیام خطا متوقف کند."]}
+ ,{"msgid":"Prepend a <code>tag</code> with <code>!</code> to invert their domain of application, e.g. to send options to a host lacking a <code>tag</code>.","msgstr":["برای معکوس کردن حوزهٔ کاربرد، پیش از <code>tag</code> علامت <code>!</code> بگذارید؛ مثلاً برای ارسال گزینه به میزبان فاقد آن <code>tag</code>."]}
+ ,{"msgid":"Use the %s button to add a new <code>tag</code>.","msgstr":["برای افزودن <code>tag</code> جدید از دکمهٔ %s استفاده کنید."]}
+ ,{"msgid":"Encountering chosen DHCP <code>option(6)</code>s (or also its <code>,value</code>) from clients triggers dnsmasq to set alphanumeric <code>tag</code>s.","msgstr":["دریافت گزینه‌های منتخب DHCP از نوع <code>option(6)</code> یا مقدار <code>,value</code> آن‌ها از کلاینت، باعث تنظیم برچسب‌های حرفی‌عددی <code>tag</code> توسط dnsmasq می‌شود."]}
+ ,{"msgid":"In other words: \"<code>match</code> these <code>option(6)</code>s to set this <code>tag</code>\" or \"These <code>option(6)</code>s set this <code>tag</code>\".","msgstr":["به بیان دیگر: با <code>match</code> این <code>option(6)</code>ها، این <code>tag</code> تنظیم شود؛ یا این <code>option(6)</code>ها، این <code>tag</code> را تنظیم می‌کنند."]}
+ ,{"msgid":"Internally, these configuration entries are called <code>match</code>.","msgstr":["نام داخلی این مدخل‌های تنظیمات، <code>match</code> است."]}
+ ,{"msgid":"Matching option syntax: <code>&lt;option number&gt;|option:&lt;option name&gt;[,&lt;value&gt;]</code>.","msgstr":["قالب گزینهٔ تطبیق: <code>&lt;option number&gt;|option:&lt;option name&gt;[,&lt;value&gt;]</code>."]}
+ ,{"msgid":"Prefix named (IPv6) options with <code>option(6):</code>.","msgstr":["پیش از گزینه‌های نام‌دار IPv6، عبارت <code>option(6):</code> قرار دهید."]}
+ ,{"msgid":"Wildcards (<code>*</code>) allowed.","msgstr":["نویسهٔ جایگزین (<code>*</code>) مجاز است."]}
+ ,{"msgid":"Match <code>option:client-arch,6</code>, Tag <code>efi-ia32</code>, sets tag <code>efi-ia32</code>","msgstr":["تطبیق <code>option:client-arch,6</code> با برچسب <code>efi-ia32</code>، برچسب <code>efi-ia32</code> را تنظیم می‌کند"]}
+ ,{"msgid":"Use the %s Button to add a new <code>match</code>.","msgstr":["برای افزودن <code>match</code> جدید از دکمهٔ %s استفاده کنید."]}
+ ,{"msgid":"valid time (hh:mm)","msgstr":["زمان معتبر (hh:mm)"]}
+ ,{"msgid":"Must be UUID format!","msgstr":["باید به قالب UUID باشد!"]}
+ ,{"msgid":"In order to prevent unauthorized access to the system, your request has been blocked. Click \"Continue »\" below to return to the previous page.","msgstr":["برای جلوگیری از دسترسی غیرمجاز به سامانه، درخواست شما مسدود شده است. برای بازگشت به صفحهٔ قبل، دکمهٔ «ادامه» را در پایین بزنید."]}
+ ,{"msgid":"Core","msgstr":["هسته"]}
+ ,{"msgid":"Ping","msgstr":["پینگ"]}
+ ,{"msgid":"TCPing","msgstr":["پینگ TCP"]}
+ ,{"msgid":"Continue »","msgstr":["ادامه »"]}
+ ,{"msgid":"unicast","msgstr":["تک‌پخشی"]}
+ ,{"msgid":"dummy","msgstr":["مجازی بدون پیوند"]}
+ ,{"msgid":"(root)","msgstr":["(ریشه)"]}
+ ,{"msgid":"0 Mbit/s","msgstr":["0 مگابیت‌برثانیه"]}
+ ,{"msgid":"Public key and Private key path can not be empty!","msgstr":["مسیر کلید عمومی و کلید خصوصی نباید خالی باشد!"]}
+ ,{"msgid":"Public key absolute path","msgstr":["مسیر مطلق کلید عمومی"]}
+ ,{"msgid":"Private key absolute path","msgstr":["مسیر مطلق کلید خصوصی"]}
+]

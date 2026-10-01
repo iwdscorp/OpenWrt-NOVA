@@ -1,0 +1,9 @@
+#!/bin/sh
+# Register only. Selecting a theme or language is always the user's choice.
+uci -q get luci.themes >/dev/null || uci set luci.themes=internal
+uci set luci.themes.NOVA='/luci-static/nova'
+uci -q get luci.languages >/dev/null || uci set luci.languages=internal
+uci set luci.languages.fa='فارسی'
+uci set luci.languages.en='English'
+uci commit luci
+exit 0

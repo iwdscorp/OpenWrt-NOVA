@@ -1,0 +1,107 @@
+/* Native LuCI components. No replacement controls, no API or form changes. */
+body.nova{--background-color-high:#fff;--background-color-medium:#f3f6fa;--background-color-low:#edf3f7;--border-color-high:#cdd8e4;--border-color-medium:#dde5ee;--text-color-high:#192c40;--text-color-highest:#192c40;--text-color-medium:#67798d;--default-btn-background:#fff;--default-btn-border-color:#cdd8e4}
+body.nova .left{text-align:start!important}
+body.nova .right{text-align:end!important}
+body.nova .center{text-align:center!important}
+body.nova .cbi-value-title{direction:inherit!important;unicode-bidi:plaintext}
+html[dir=rtl] body.nova .zone-forwards>span{transform:scaleX(-1)}
+body.nova .cbi-value-description{margin-inline-start:20px;margin-inline-end:0}
+body.nova .cbi-map-descr,body.nova .cbi-section-descr,body.nova .cbi-value-description{unicode-bidi:plaintext;text-align:start}
+body.nova .cbi-value-description::before{left:auto;right:auto;inset-inline-start:-20px;margin:0}
+body.nova .cbi-dropdown{direction:inherit;text-align:start}
+body.nova select,body.nova .cbi-dropdown,body.nova .cbi-dropdown>ul{background-image:none!important}
+body.nova .cbi-dropdown>ul>li{padding-inline:10px 24px;text-align:start}
+body.nova .cbi-dynlist>.item{margin-inline:0 6px;text-align:start}
+body.nova .cbi-dynlist>.item>span{unicode-bidi:plaintext}
+body.nova .cbi-section-actions{text-align:end!important}
+body.nova .cbi-section-actions>div{gap:6px;justify-content:flex-end;align-items:center;flex-wrap:wrap}
+body.nova .cbi-section-actions>div>.cbi-button{flex:0 0 auto;margin:0;white-space:nowrap}
+body.nova .cbi-button,body.nova .btn{background-image:none!important;text-shadow:none!important;letter-spacing:0;transition:background-color .15s,border-color .15s}
+body.nova .cbi-button-edit{background:#eaf6f5!important;color:#087e80!important;border-color:#b6ded9!important}
+body.nova .cbi-button:disabled{opacity:.45;cursor:not-allowed}
+body.nova .ifacebadge{display:inline-flex;align-items:center;gap:7px;padding:6px 9px;background:#f0f6f8;border:1px solid #dce7eb;border-radius:8px;box-shadow:none;text-shadow:none;line-height:1.5;white-space:normal}
+body.nova .ifacebadge>span:not(.cbi-tooltip-container){unicode-bidi:isolate;font-weight:600}
+body.nova .ifacebadge img{width:22px;height:22px}
+body.nova .cbi-tooltip.ifacebadge{display:none}
+body.nova .cbi-tooltip-container:hover>.cbi-tooltip.ifacebadge{display:flex;position:absolute;inset-inline-start:0;inset-block-start:100%;z-index:1050;min-width:230px;padding:14px;background:#fff;box-shadow:0 10px 35px #192c4026;white-space:normal}
+body.nova .zonebadge{display:inline-flex;align-items:center;gap:6px;background:#f1f6f8!important;color:#385365;border:1px solid #d8e3e9;border-inline-start:3px solid rgb(var(--zone-color-rgb,39,155,152));text-shadow:none;padding:5px 9px;border-radius:7px}
+body.nova .nova-value{display:inline-block;max-width:100%;unicode-bidi:isolate;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+body.nova .nova-data-table{border:1px solid #dfe7ef;border-radius:12px;border-spacing:0;background:#fff;margin:8px 0 16px;overflow:hidden}
+body.nova .nova-data-table .th,body.nova .nova-data-table th{padding:14px 16px;background:#edf3f8;color:#526b80;font-size:12px;font-weight:650;letter-spacing:0;white-space:normal;text-align:start;border:0;border-bottom:1px solid #dce6ef}
+body.nova .nova-data-table .td,body.nova .nova-data-table td{padding:16px;line-height:1.7;white-space:normal;border:0;border-bottom:1px solid #e8eef4;text-align:start;background:#fff;overflow-wrap:anywhere}
+body.nova .nova-data-table .tr:nth-child(even)>.td{background:#fafcfe}
+body.nova .nova-data-table .tr:hover>.td{background:#f0f8f8}
+body.nova .nova-data-table .tr:last-child>.td{border-bottom:0}
+body.nova .nova-data-table .td:first-child{font-weight:600;color:#29495e}
+body.nova .nova-data-table .td.cbi-section-actions{min-width:0!important}
+body.nova .nova-data-table .cbi-value-field{padding:16px}
+body.nova .nova-data-table input[type=checkbox]{width:17px;height:17px;vertical-align:middle;margin-inline:0 5px}
+body.nova .nova-data-table .pw-remark{min-width:180px}
+body.nova .nova-data-table .pw-actions>div{flex-wrap:wrap;min-width:250px;justify-content:flex-start}
+body.nova .nova-data-table .pw-actions .drag-handle{display:inline-grid;place-items:center;min-width:28px;min-height:32px;color:#8397a8}
+
+/* Identity header + labelled metrics + action footer for every interface. */
+body.nova #cbi-network-interface .cbi-section-table{display:block;overflow:visible;background:transparent;border:0;margin:0}
+body.nova #cbi-network-interface .cbi-section-tbody{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;width:100%}
+body.nova #cbi-network-interface .cbi-section-table-row{display:grid;grid-template-columns:minmax(0,1fr);gap:0;min-width:0;padding:0;border:1px solid #d7e4ea;border-radius:14px;background:#fff;box-shadow:0 4px 14px #17384b06;overflow:visible;align-items:stretch}
+body.nova #cbi-network-interface .cbi-section-table-row:only-child{grid-column:1/-1}
+body.nova #cbi-network-interface .cbi-section-table-row:only-child [id$="-ifc-description"]{grid-template-columns:repeat(4,minmax(0,1fr))}
+body.nova #cbi-network-interface .cbi-section-table-row>.td{display:block;width:100%!important;min-width:0!important;border:0;padding:0;background:transparent}
+body.nova #cbi-network-interface .ifacebox{display:flex;flex-direction:row;justify-content:space-between;align-items:center;gap:14px;width:100%;min-width:0;margin:0;padding:18px 20px;background:#f0f8f8;border:0;border-bottom:1px solid #dbe9ea;border-radius:13px 13px 0 0;text-align:start;box-shadow:none}
+body.nova #cbi-network-interface .ifacebox-head{display:flex;align-items:center;gap:10px;padding:0;background:transparent!important;color:#203e50;border:0;border-radius:0;text-shadow:none;font:700 20px/1.4 "Segoe UI",Vazirmatn,sans-serif;unicode-bidi:isolate}
+body.nova #cbi-network-interface .ifacebox-head::before{content:"";width:10px;height:10px;border-radius:50%;background:rgb(var(--zone-color-rgb,39,155,152));box-shadow:0 0 0 4px #fff;flex:none}
+body.nova #cbi-network-interface .ifacebox-body{display:flex;align-items:center;gap:7px;padding:0;color:#537582;font-size:12px;direction:ltr;text-align:left}
+body.nova #cbi-network-interface .ifacebox-body>br{display:none}
+body.nova #cbi-network-interface .ifacebox-body>small{display:block;margin-inline-start:5px;font:600 12px "Segoe UI",sans-serif}
+body.nova #cbi-network-interface [id$="-ifc-description"]{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;padding:6px 20px 14px;text-align:start}
+body.nova #cbi-network-interface [id$="-ifc-description"]>br{display:none}
+body.nova #cbi-network-interface .nova-stat{display:flex;flex-direction:column;align-items:flex-start;gap:5px;min-width:0;padding:13px 0;border-bottom:1px solid #edf2f6;white-space:normal}
+body.nova #cbi-network-interface .nova-stat:nth-of-type(odd){padding-inline-end:14px}
+body.nova #cbi-network-interface .nova-stat-label{font-size:12px;line-height:1.5;color:#7890a0;font-weight:500}
+body.nova #cbi-network-interface .nova-stat-value{max-width:100%;overflow-wrap:anywhere;unicode-bidi:isolate;font-size:13px;font-weight:600;color:#28485b;line-height:1.65;font-variant-numeric:tabular-nums}
+body.nova #cbi-network-interface .nova-stat-technical .nova-stat-value{font:600 13px/1.8 "Segoe UI",Vazirmatn,sans-serif}
+body.nova #cbi-network-interface .cbi-section-actions{padding:13px 18px!important;background:#fafcfd!important;border-top:1px solid #e5edf2!important;border-radius:0 0 13px 13px}
+body.nova #cbi-network-interface .cbi-section-actions>div{justify-content:flex-start;gap:7px}
+body.nova #cbi-network-interface .cbi-button-edit{order:-1}
+body.nova #cbi-network-interface .cbi-button-remove{margin-inline-start:auto}
+body.nova .network-status-table .ifacebox{flex:1 1 260px;border-radius:12px;margin:6px;overflow:visible}
+body.nova .network-status-table .ifacebox-head{background:#f0f8f8!important;color:#285c63;padding:12px;border-bottom:1px solid #dce9eb;text-shadow:none}
+body.nova .network-status-table .ifacebox-body{text-align:start;padding:15px;gap:8px}
+body.nova .modal [id$="-ifc-status"]{display:block;width:100%;padding:14px;background:#f5fafb;border-color:#dce8ec}
+body.nova .modal [id$="-ifc-status"]>img{margin-block-end:12px}
+body.nova .modal [id$="-ifc-status"]>span{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 16px;direction:inherit;font-weight:400}
+body.nova .modal [id$="-ifc-status"]>span>br{display:none}
+body.nova .modal .nova-stat{display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-width:0;white-space:normal}
+body.nova .modal .nova-stat-label{font-size:11px;color:#7890a0;font-weight:500}
+body.nova .modal .nova-stat-value{font-size:12px;color:#28485b;max-width:100%;overflow-wrap:anywhere;unicode-bidi:isolate}
+
+@media(max-width:1200px){body.nova #cbi-network-interface .cbi-section-tbody{grid-template-columns:1fr}}
+@media(min-width:801px){body.nova .nova-data-table .cbi-section-actions>div{flex-wrap:nowrap}body.nova .nova-data-table .td.cbi-section-actions{width:1%!important}}
+@media(max-width:800px){
+ body.nova .nova-card-table,body.nova .nova-card-table>tbody{display:block;width:100%;overflow:visible;border:0;background:transparent}
+ body.nova .nova-card-table>thead,body.nova .nova-card-table .table-titles,body.nova .nova-card-table .cbi-section-table-titles{display:none}
+ body.nova .nova-card-table .tr{display:block;min-width:0;border:1px solid #dce6ee;border-radius:11px;margin-bottom:12px;overflow:hidden;background:#fff}
+ body.nova .nova-card-table .tr>.td{display:grid;grid-template-columns:minmax(80px,.7fr) minmax(0,1fr);gap:12px;align-items:center;min-width:0;width:100%!important;padding:11px 13px;font-weight:400}
+ body.nova .nova-card-table .td[data-nova-label]::before{content:attr(data-nova-label);font:500 11px/1.6 Vazirmatn,sans-serif;color:#7890a0;text-align:start;direction:inherit}
+ body.nova .nova-card-table .td.cbi-section-actions{display:block;background:#f6f9fc;min-width:0!important}
+ body.nova .nova-card-table .td.cbi-section-actions::before{display:none}
+ body.nova .nova-card-table .td.cbi-section-actions>div{justify-content:flex-start}
+ body.nova .nova-card-table .pw-actions>div{min-width:0}
+ body.nova .nova-card-table .pw-remark{min-width:0}
+ body.nova .nova-card-table .td:has(.zone-forwards){grid-template-columns:1fr}
+ body.nova .nova-card-table .zone-forwards{width:100%;max-width:100%;gap:8px}
+ body.nova .nova-card-table .zone-forwards>span{flex:0 0 auto}
+ body.nova #cbi-network-interface .cbi-section-tbody{gap:14px}
+ body.nova #cbi-network-interface .ifacebox{padding:15px}
+ body.nova #cbi-network-interface [id$="-ifc-description"]{padding-inline:15px}
+ body.nova #cbi-network-interface .cbi-section-table-row:only-child [id$="-ifc-description"]{grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.nova #cbi-network-interface .cbi-section-actions{padding:12px!important}
+ body.nova #cbi-network-interface .cbi-button{padding:7px 9px;font-size:11px}
+ body.nova .cbi-page-actions{bottom:0;padding:10px;gap:5px}
+ body.nova .cbi-value-description{margin-inline-start:20px}
+ body.nova .nova-data-table:not(.nova-card-table){display:block;overflow-x:auto}
+ body.nova .nova-data-table:not(.nova-card-table) .tr{min-width:540px}
+ body.nova .nova-empty-table,body.nova .nova-empty-table>tbody{display:block;overflow:visible}
+ body.nova .nova-empty-table .cbi-section-table-titles,body.nova .nova-empty-table>thead{display:none}
+ body.nova .nova-empty-table .tr,body.nova .nova-empty-table .td{display:block;min-width:0!important;width:100%;text-align:center;padding:15px}
+}
