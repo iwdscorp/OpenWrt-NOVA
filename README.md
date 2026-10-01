@@ -8,6 +8,14 @@ A bilingual **native LuCI theme** with Persian typography, English LTR layout, r
 
 [فارسی](docs/README.fa.md) · [Install](docs/INSTALL.md) · [Release 2.8.1](docs/releases/v2.8.1.md) · [Verification](docs/VERIFICATION.md) · [Contributing](CONTRIBUTING.md)
 
+<div dir="rtl">
+
+**NOVA؛ تجربه‌ای تازه برای مدیریت OpenWrt**
+
+بازطراحی رابط LuCI با فونت فارسی استعداد، چیدمان فارسی و انگلیسی، نمودارهای زندهٔ ترافیک و بخش‌های منظم‌تر فایروال؛ با حفظ فرم‌ها و سازوکار اصلی تنظیمات روتر. [معرفی و راهنمای فارسی](docs/README.fa.md)
+
+</div>
+
 ## At a glance
 
 | Area | What NOVA adds |

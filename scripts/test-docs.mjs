@@ -30,6 +30,12 @@ assert.doesNotMatch(ci,/pull_request_target|workflow_run|contents: write|secrets
 assert.equal([...ci.matchAll(/uses:\s+actions\/[\w-]+@([a-f0-9]{40})/g)].length,2,'Pin both official actions to full verified commits');
 for(const command of ['npm ci','npm run build','npm test'])assert.ok(ci.includes(command));
 assert.match(read('docs/README.fa.md'),/<div dir="rtl">/);
+const persianReadme=read('docs/README.fa.md');
+assert.equal([...persianReadme.matchAll(/<div dir="rtl">/g)].length,[...persianReadme.matchAll(/<\/div>/g)].length,'Balance Persian RTL sections around LTR command blocks');
+assert.match(persianReadme,/پیش‌انتشار/,'Preserve the Persian release qualification');
+assert.match(persianReadme,/هنوز آزموده نشده‌اند/,'Preserve the unverified compatibility boundary');
+assert.doesNotMatch(persianReadme,/پس از انتشار در GitHub|گردش زنده|گردش کامل|DOM کدمحور/,'Use current publication status and natural Persian wording');
+assert.match(read('README.md'),/معرفی و راهنمای فارسی/,'Make the Persian introduction discoverable on the main page');
 assert.match(read('README.md'),/https:\/\/github\.com\/iwdscorp\/OpenWrt-NOVA\/releases\/download\/v2\.8\.1\/luci-theme-nova-2\.8\.1-r1\.apk/,'Preserve the verified package download destination');
 assert.match(read('README.md'),/pre-release/,'Do not present incomplete runtime acceptance as a stable release');
 assert.doesNotMatch(read('README.md')+read('docs/README.fa.md')+read('docs/RELEASING.md'),/ayriatoorani-arch|prepared but not published yet/,'Do not retain the old account or stale publication status');
