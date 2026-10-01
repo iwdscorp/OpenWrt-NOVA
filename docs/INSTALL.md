@@ -53,6 +53,21 @@ Open **System → System → Language and Style**. Select **NOVA**, choose **ف�
 
 The theme uses existing LuCI authentication; it does not set or replace your router password. No laboratory login credentials are shipped in this repository.
 
+## Updates and firmware upgrades
+
+Updating the **NOVA package** replaces its runtime files; manual modifications to those files can be overwritten. The current installation hooks only register NOVA and its languages, without changing network/firewall configuration or forcing your selected theme/language.
+
+Updating **LuCI** normally leaves NOVA installed, but compatibility can change. Check the tested firmware/LuCI versions before relying on a new version.
+
+A standard **OpenWrt firmware upgrade with an official image** does not preserve separately installed packages by default. **Keep settings** retains configuration, not a guarantee that the NOVA package and its files will survive. See [the official package-preservation guide](https://openwrt.org/docs/guide-user/installation/sysupgrade.packages).
+
+1. Before the firmware upgrade, back up settings and keep the verified NOVA APK on your computer, not only in the router's temporary storage.
+2. Temporarily select **Bootstrap** under **Language and Style** while it is installed. This reduces the risk of retaining a selected NOVA path after its files disappear; it does not preserve the package.
+3. After upgrading, check the new firmware's package manager and LuCI compatibility. Do not install this APK on an IPK/opkg target or assume an untested LuCI version is supported.
+4. If needed, reinstall a compatible NOVA package, select NOVA and your language, then reload with **Ctrl+F5**.
+
+A custom firmware image that includes a compatible NOVA package can avoid a separate reinstall. NOVA is currently a locally installed package, not part of the official OpenWrt package repository or an automatically preserved firmware image. Automatic recovery through Attended Sysupgrade has not been verified for this package.
+
 ## Return to the previous theme
 
 Use **Language and Style** to select your previous theme. For an installed Bootstrap fallback through SSH:

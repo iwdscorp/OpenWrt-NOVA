@@ -64,6 +64,16 @@ Published as a **pre-release** while fresh rendered/browser/mobile and native sa
 
 See [installation and recovery](docs/INSTALL.md) before deployment.
 
+## Will NOVA survive an update?
+
+- **Updating NOVA:** new package files replace the previous version. The current install hooks register the theme/languages without changing network/firewall configuration or forcing a theme/language selection. Manual edits to package-owned theme files may be overwritten.
+- **Updating LuCI:** NOVA normally remains installed, but LuCI changes can affect compatibility. Versions outside the tested environment are not guaranteed to work.
+- **Upgrading OpenWrt firmware:** a standard upgrade with an official image does not preserve separately installed packages by default. NOVA may need to be reinstalled. **Keep settings** preserves configuration; it does not guarantee preservation of the theme package or its files. See [OpenWrt's package-preservation guide](https://openwrt.org/docs/guide-user/installation/sysupgrade.packages).
+
+Before a firmware upgrade, back up settings, retain the APK on your computer and temporarily select **Bootstrap**. After upgrading, verify firmware/LuCI compatibility, reinstall a compatible NOVA package if needed, select it again and reload with **Ctrl+F5**. Switching to Bootstrap reduces the risk of a missing/incompatible theme preventing access; it does not preserve NOVA's files.
+
+A custom firmware image containing a compatible NOVA package can avoid a separate reinstall. No automatic preservation across all upgrades is promised. See [installation and recovery](docs/INSTALL.md) for fallback steps.
+
 ## Firewall · Policy & Objects
 
 The firewall screens are different tools, not four interchangeable tables:
